@@ -1,4 +1,4 @@
-<?php /*a:4:{s:60:"E:\phpStudy\WWW\jusha\application\home\view\index_index.html";i:1545453667;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_header.html";i:1545453667;s:59:"E:\phpStudy\WWW\jusha\application\home\view\common_nav.html";i:1545453445;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_footer.html";i:1545467772;}*/ ?>
+<?php /*a:4:{s:60:"E:\phpStudy\WWW\jusha\application\home\view\index_index.html";i:1545493711;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_header.html";i:1545497211;s:59:"E:\phpStudy\WWW\jusha\application\home\view\common_nav.html";i:1545453445;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_footer.html";i:1545490685;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,16 +21,32 @@
         <div class="city">
             <div class="now-city">
                 <div class="city-name" id="chooseBtn" status="show">
-                    石家庄
+                    <?php
+                    $address_id = session('address_id');
+
+                    echo $address[$address_id]['val'];
+                    ?>
+
                 </div>
                 <div class="arrow">
                     <img src="/template/img/web/arrow.png" alt="">
                 </div>
             </div>
             <div class="city-choose" id="city-choose">
-                <li class="city-list">石家庄</li>
-                <li class="city-list">保定</li>
+                <?php if(is_array($address) || $address instanceof \think\Collection || $address instanceof \think\Paginator): $i = 0; $__LIST__ = $address;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+                <li class="city-list" id="<?php echo htmlentities($v['key']); ?>" onclick="setConfig(this)"><?php echo htmlentities($v['val']); ?></li>
+                <?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
+            <script>
+                function setConfig(obj){
+                    $.get("<?php echo url('home/index/setConfig'); ?>",{address_id:$(obj).attr('id')},function(data){
+                        console.log(data);
+
+                    })
+                }
+
+            </script>
+
         </div>
         <div class="nav" id="nav" status="show">
             <div class="nav-button">
@@ -94,8 +110,8 @@
 			</div>
 		</div>
 		<div class="button-list">
-			<div class="btn"><a href=""><span class="btn-span">无车加盟</span><span class="img"><img src="img/web/right.png" alt=""></span></a></div>
-			<div class="btn"><a href=""><span class="btn-span">有车加盟</span><span class="img"><img src="img/web/right.png" alt=""></span></a></div>
+			<div class="btn"><a href=""><span class="btn-span">无车加盟</span><span class="img"><img src="/template/img/web/right.png" alt=""></span></a></div>
+			<div class="btn"><a href=""><span class="btn-span">有车加盟</span><span class="img"><img src="/template/img/web/right.png" alt=""></span></a></div>
 		</div>
 	</div>
 	<div class="footer">

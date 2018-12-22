@@ -1,15 +1,18 @@
-<?php /*a:4:{s:63:"E:\phpStudy\WWW\jusha\application\home\view\page_advantage.html";i:1545462840;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_header.html";i:1545453667;s:59:"E:\phpStudy\WWW\jusha\application\home\view\common_nav.html";i:1545453445;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_footer.html";i:1545453545;}*/ ?>
+<?php /*a:4:{s:58:"E:\phpStudy\WWW\jusha\application\home\view\page_show.html";i:1545457033;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_header.html";i:1545453667;s:59:"E:\phpStudy\WWW\jusha\application\home\view\common_nav.html";i:1545453445;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_footer.html";i:1545490685;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
-	<title><?php echo isset($info['title']) ? htmlentities($info['title']) : ($title ? $title : $sys['title']); ?></title>
-	<meta name="keywords" content="<?php echo isset($info['keywords']) ? htmlentities($info['keywords']) : ($keywords ? $keywords : $sys['key']); ?>"/>
-	<meta name="description" content="<?php echo isset($info['description']) ? htmlentities($info['description']) : ($description ? $description : $sys['des']); ?>"/>
-	<link rel="stylesheet" type="text/css" href="/template/css/style.css">
-	<link rel="stylesheet" type="text/css" href="/template/css/other.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title><?php echo isset($info['title']) ? htmlentities($info['title']) : ($title ? $title : $sys['title']); ?></title>
+    <meta name="keywords" content="<?php echo isset($info['keywords']) ? htmlentities($info['keywords']) : ($keywords ? $keywords : $sys['key']); ?>"/>
+    <meta name="description" content="<?php echo isset($info['description']) ? htmlentities($info['description']) : ($description ? $description : $sys['des']); ?>"/>
+    <link rel="stylesheet" type="text/css" href="/template/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/template/css/other.css">
+    <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=YLBBZ-4RYKO-5JGWR-SEJDQ-M5DPF-KRFUP"></script>
 </head>
+
 <body>
 <div class="header">
     <div class="fixation">
@@ -48,60 +51,53 @@
 </div>
 <?php
     $page = new app\services\PageService();
-    $info = $page->getPage(52);
-	$category = $page->getCategory(51,db('question'));
+    $info = $page->getPage(44);
+     $category = $page->getCategory(45,db('picture'));
 ?>
-	<div class="content">
-		<div class="banner">
-			<img src="<?php echo htmlentities($image); ?>" class="pc-banner">
-			<img src="<?php echo htmlentities($imageMobile); ?>" class="mb-banner">
-		</div>
-		<div class="floor">
-			<div class="floor-title">
-				<?php echo htmlentities($category['catname']); ?><br>
-				<span><?php echo htmlentities($category['catdir']); ?></span>
-			</div>
-			<?php if(is_array($category['list']) || $category['list'] instanceof \think\Collection || $category['list'] instanceof \think\Paginator): $i = 0; $__LIST__ = $category['list'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-			<div <?php if($mod == '1'): ?>class="left"<?php else: ?>class="right"<?php endif; ?>>
-				<div class="fixation">
-					<div class="img">
-						<img src="<?php echo htmlentities($v['image']); ?>">
-					</div>
-					<div class="word">
-						<div class="big-number">
-							0<?php echo htmlentities($i); ?>
-						</div>
-						<div class="big-title">
-							<?php echo htmlentities($v['title']); ?><br>
-							<span><?php echo htmlentities($v['english']); ?></span>
-						</div>
-						<div class="text">
-							<?php echo $v['content']; ?>
-						</div>
-					</div>
-				</div>
-			</div>
-			<?php endforeach; endif; else: echo "" ;endif; ?>
-		</div>
-		<div class="driver">
-			<div class="floor-title">
-				<?php echo htmlentities($info['catname']); ?><br>
-				<span><?php echo htmlentities($info['catdir']); ?></span>
-			</div>
-			<div class="bg-img">
-				<img src="/template/img/web/bottom-banner2.png" class="mb-bottom">
-				<img src="/template/img/web/bottom-banner.png" class="pc-bottom">
-			</div>
-			<div class="word-box">
-				<?php echo $info['content']; ?>
-			</div>
-		</div>
-	</div>
+<div class="content">
+    <div class="banner">
+        <img src="<?php echo htmlentities($info['image']); ?>" class="pc-banner">
+        <img src="<?php echo htmlentities($info['imageMobile']); ?>" class="mb-banner">
+    </div>
+    <div class="floor">
+        <div class="floor-title">
+
+            <?php echo htmlentities($info['catname']); ?><br>
+            <span><?php echo htmlentities($info['catdir']); ?></span>
+        </div>
+        <div class="brief">
+            <?php echo $info['content']; ?>
+        </div>
+        <div class="slider">
+            <div class="back-img">
+                <img src="<?php echo htmlentities($category['image']); ?>" class="pc-web">
+                <img src="<?php echo htmlentities($category['imageMobile']); ?>" class="mb-web">
+            </div>
+            <div class="slide-box">
+                <div class="slide-wrapper" id="slide-wrapper">
+                    <?php
+                    $array=['','left','midd','right'];
+                    if(is_array($category['list']) || $category['list'] instanceof \think\Collection || $category['list'] instanceof \think\Paginator): $i = 0; $__LIST__ = $category['list'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+                    <div class="slide-item" id="<?php echo htmlentities($array[$i]); ?>">
+                        <img src="<?php echo htmlentities($v['pic']); ?>">
+                    </div>
+                   <?php endforeach; endif; else: echo "" ;endif; ?>
+                </div>
+                <div class="prev">
+                    <
+                </div>
+                <div class="next">
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="footer">
     <div class="mobile">
         <div class="qr-code">
             <div class="code-img">
-                <img src="/template/img/web/qrcode.png" alt="">
+                <img src="<?php echo htmlentities($sys['qrcode']); ?>" alt="">
             </div>
             <div class="word">
                 扫二维码关注公众号
@@ -164,7 +160,7 @@
                 </div>
             </div>
             <div class="copyright">
-                © 2005-2011,WWW.XXXXXX.COM巨鲨汽车网站 版权所有 沪ICP备XXXXXX号
+                <?php echo htmlentities($sys['copyright']); ?> <?php echo htmlentities($sys['bah']); ?>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-<?php /*a:3:{s:63:"E:\phpStudy\WWW\jusha\application\admin\view\system\system.html";i:1545467290;s:61:"E:\phpStudy\WWW\jusha\application\admin\view\common\head.html";i:1545055853;s:61:"E:\phpStudy\WWW\jusha\application\admin\view\common\foot.html";i:1545055853;}*/ ?>
+<?php /*a:3:{s:63:"E:\phpStudy\WWW\jusha\application\admin\view\system\system.html";i:1545467942;s:61:"E:\phpStudy\WWW\jusha\application\admin\view\common\head.html";i:1545055853;s:61:"E:\phpStudy\WWW\jusha\application\admin\view\common\foot.html";i:1545055853;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -140,12 +140,7 @@
                             <input type="text" name="complain" placeholder="请输入QQ" class="layui-input">
                         </div>
                     </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">网址</label>
-                        <div class="layui-input-3">
-                            <input type="text" name="complain" placeholder="请输入网址" class="layui-input">
-                        </div>
-                    </div>
+
                     <div class="layui-form-item">
                         <label class="layui-form-label"><?php echo lang('email'); ?></label>
                         <div class="layui-input-3">

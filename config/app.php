@@ -165,5 +165,6 @@ return [
     //文件上传
     'addwater'=>false,
     'watertext'=>'巨鲨',
-    'version'=>'5.7.4'
+    'version'=>'5.7.4',
+    'address_id'=>1
 ];

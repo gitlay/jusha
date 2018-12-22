@@ -8,6 +8,7 @@ class Index extends Common{
         parent::initialize();
     }
     public function index(){
+
         $order = input('order','createtime');
         $time = time();
         $list=db('article')->alias('a')
@@ -87,5 +88,12 @@ class Index extends Common{
         $map['id'] = $id;
         $files = Db::name('download')->where($map)->find();
         return download(Env::get('root_path').'public'.$files['files'], $files['title']);
+    }
+
+    public function setConfig(){
+        $address_id = input('address_id');
+        session('address_id',$address_id);
+        $address_id =   session('address_id');
+        echo $address_id;
     }
 }

@@ -1,4 +1,4 @@
-<?php /*a:4:{s:61:"E:\phpStudy\WWW\jusha\application\home\view\page_contact.html";i:1545467511;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_header.html";i:1545453667;s:59:"E:\phpStudy\WWW\jusha\application\home\view\common_nav.html";i:1545453445;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_footer.html";i:1545467772;}*/ ?>
+<?php /*a:4:{s:61:"E:\phpStudy\WWW\jusha\application\home\view\page_contact.html";i:1545467511;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_header.html";i:1545453667;s:59:"E:\phpStudy\WWW\jusha\application\home\view\common_nav.html";i:1545453445;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_footer.html";i:1545490685;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -201,6 +201,7 @@
 <script src="/template/js/main.js"></script>
 </body>
 </html>
+
 
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=56srZYI3vAB9XzW2B0u544hHhsdWdE7X"></script>
 

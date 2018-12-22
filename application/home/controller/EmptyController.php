@@ -54,6 +54,7 @@ class EmptyController extends Common
             }
             $map .= ' and (status = 1 or (status = 0 and createtime <' . time() . '))';
             if (DBNAME == 'cars') {
+                $map.= ' and address_id='.session('address_id');
 
                 $list = $this->dao->alias('a')
                     ->join(config('database.prefix') . 'category c', 'a.catid = c.id', 'left')
@@ -65,6 +66,8 @@ class EmptyController extends Common
                 foreach ($list as $k => $v) {
                     $images = explode(";",$v['bimgs']);
                     $title = explode("\n",$v['bimgsTitle']);
+                    $list[$k]['bgimg'] =  'url('.$v['bgimg'].')';
+
                     $list[$k]['bimgs']= array();
                     if(!empty($images)){
                         foreach ($images as $key=>$val){

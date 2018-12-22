@@ -9,16 +9,32 @@
         <div class="city">
             <div class="now-city">
                 <div class="city-name" id="chooseBtn" status="show">
-                    石家庄
+                    <?php
+                    $address_id = session('address_id');
+
+                    echo $address[$address_id]['val'];
+                    ?>
+
                 </div>
                 <div class="arrow">
                     <img src="/template/img/web/arrow.png" alt="">
                 </div>
             </div>
             <div class="city-choose" id="city-choose">
-                <li class="city-list">石家庄</li>
-                <li class="city-list">保定</li>
+                {volist name="address" id="v"}
+                <li class="city-list" id="{$v.key}" onclick="setConfig(this)">{$v.val}</li>
+                {/volist}
             </div>
+            <script>
+                function setConfig(obj){
+                    $.get("{:url('home/index/setConfig')}",{address_id:$(obj).attr('id')},function(data){
+                        console.log(data);
+
+                    })
+                }
+
+            </script>
+
         </div>
         <div class="nav" id="nav" status="show">
             <div class="nav-button">
