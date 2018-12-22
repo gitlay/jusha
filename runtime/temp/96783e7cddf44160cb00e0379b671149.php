@@ -1,10 +1,10 @@
-<?php /*a:1:{s:58:"E:\phpStudy\WWW\jusha\application\home\view\cars_list.html";i:1545487241;}*/ ?>
+<?php /*a:1:{s:58:"E:\phpStudy\WWW\jusha\application\home\view\cars_list.html";i:1545490461;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		
+
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="/template/lib/mui.min.css"/>
 		<link rel="stylesheet" type="text/css" href="/template/lib/swiper-3.4.2.min.css"/>
@@ -33,7 +33,7 @@
 					</ul>
 				</div>
 				<!--中间汽车-->
-				<div class="car-box"> 
+				<div class="car-box">
 					<img class="car" v-if="activeCar" :src="activeCar.bg"/>
 				</div>
 				<!--左侧标签-->
@@ -93,14 +93,14 @@
 					<div class="nav-item" :class="{active:activeIndex==2}" @click="fixShow(2)">运营分析</div>
 					<div class="nav-item" :class="{active:activeIndex==3}" @click="fixShow(3)">加入我们</div>
 				</div>
-				
+
 				<!--底部轮播-->
 				<div class="cars-swiper" id="certify">
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide"  :style="{background:item.bgimg}" v-for="(item,index) in cars">
 								<img :src="item.simg" />
-							    <p class="name">{{item.name}}</p>
+							    <p class="name">{{item.title}}</p>
 							    <p class="desc">{{item.ys}}</p>
 							</div>
 						</div>
@@ -108,7 +108,7 @@
 					<div class="swiper-button-prev" ></div>
 					<div class="swiper-button-next" ></div>
 				</div>
-				
+
 			</div>
 
 			<!--弹窗-->
@@ -116,7 +116,7 @@
 				<div class="fixed-container">
 					<!--车辆细节-->
 				    <div class="fixed-swipper">
-				    	    <div class="cancel-box" @click="cancel"><img src="img/cancel2.jpg"/></div>
+				    	    <div class="cancel-box" @click="cancel"><img src="/template/img/cancel2.jpg"/></div>
 				        <div class="swiper-container fixed-swipper-box">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide" v-for="(item,index) in bSwipers" :key="index">
@@ -145,14 +145,14 @@
 						<div class=" pbtn prev "></div>
 						<div class=" pbtn next "></div>
 				    </div>
-				   
+
 				</div>
 			</div>
 			 <!--车辆参数-->
 		    <div class="param-container" v-cloak v-if="paramShow && activeCar">
 		    	    <div class="param-wrap">
 		    	    	    <div class="param-title">车辆参数
-		    	    	      <img class="imgcancel" @click="paramHide" src="img/cancel2.jpg"/>
+		    	    	      <img class="imgcancel" @click="paramHide" src="/template/img/cancel2.jpg"/>
 		    	    	    </div>
 		    	    	    <div class="param-box">
 		    	    	       <div class="param-left">
@@ -189,7 +189,7 @@
 		    	    	       	   <div class="num">{{activeCar.zhyh}}</div>
 		    	    	       	 </div>
 		    	    	       <div class="middle-line"></div>
-		    	    	       	 
+
 		    	    	       </div>
 
 		    	    	       <div class="param-right">
@@ -225,12 +225,12 @@
 		    	    	    </div>
 		    	    </div>
 		    </div>
-		    
+
 			<!--运营分析-->
 			<div class="yunying" v-cloak v-if="yunyingShow && activeCar">
 				<div class="yunying-box">
 					<div class="yunying-title" style="padding-left: 19px;">运营分析
-		    	    	      <img class="imgcancel" @click="yunyingHide" src="img/cancel2.jpg"/>
+		    	    	      <img class="imgcancel" @click="yunyingHide" src="/template/img/cancel2.jpg"/>
 					</div>
 					<div class="y-line"></div>
 					<div class="cbbox">
@@ -261,7 +261,7 @@
 					    	   	  <img v-for="(item,index) in nullS(activeCar.cbS)" src="/template/img/star.png"/>
 					    	   </div>
 				    	    </div>
-				    	   
+
 				    	   <div class="star-box">
 					    		<div class="star1">
 					    	   	  <span>动力</span>
@@ -284,7 +284,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 <script>
 		var app = new Vue({
 			el:'.body',
@@ -295,48 +295,46 @@
 				paramShow:false,//参数
 				yunyingShow:false,//运营分析
                 cars:[
+
 					<?php  $num = count($cars); if(is_array($cars) || $cars instanceof \think\Collection || $cars instanceof \think\Paginator): $i = 0; $__LIST__ = $cars;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+
                     {
-                        name:'吉利帝豪EV450',
-                        tag:'快车',
-                        price:'13.58',
-                        type:'纯电动',
-                        maxKw:'120',
-                        maxNm:'250',
-                        engine:'--',
-                        bsx:'单速',
-                        size:'4631*1789*1495',
-                        zhyh:'--',//综合油耗O
-                        zb:'营运超长质保',//质保
-                        zj:'2650',//轴距
-                        riTitle:'电池容量（kWh）',
-                        rj:'52',//容积
-                        dc:'三元锂电池',//电池
-                        lc:'400',//里程
-                        dlcb:'百公里用电13度',//动力成本
-                        bycb:'约0.01元/公里',//保养成本
-                        ys:'可快充，免购置税，不限行，有一定的市场知名度，外观具有现代感，内饰相比同级别电车具备科技感与档次',//优势
-                        ls:'充电需要快慢充交替进行',//劣势
-                        wgS:3,
-                        cbS:4,
-                        dlS:5,
-                        zbS:3,
-                        bgimg:'url("/template/img/3-3.png")',
-                        bg:'/template/carimg/jili.png',
-                        simg:'/template/carimg/jili-s.png',
+                        title:'<?php echo htmlentities($v['title']); ?>',
+                        tag:'<?php echo htmlentities($v['tag']); ?>',
+                        price:'<?php echo htmlentities($v['price']); ?>',
+                        type:'<?php echo htmlentities($v['type']); ?>',
+                        maxKw:'<?php echo htmlentities($v['maxKw']); ?>',
+                        maxNm:'<?php echo htmlentities($v['maxNm']); ?>',
+                        engine:'<?php echo htmlentities($v['engine']); ?>',
+                        bsx:'<?php echo htmlentities($v['bsx']); ?>',
+                        size:'<?php echo htmlentities($v['size']); ?>',
+                        zhyh:'<?php echo htmlentities($v['zhyh']); ?>',//综合油耗O
+                        zb:'<?php echo htmlentities($v['zb']); ?>',//质保
+                        zj:'<?php echo htmlentities($v['zj']); ?>',//轴距
+                        riTitle:'<?php echo htmlentities($v['riTitle']); ?>',
+                        rj:'<?php echo htmlentities($v['rj']); ?>',//容积
+                        dc:'<?php echo htmlentities($v['dc']); ?>',//电池
+                        lc:'<?php echo htmlentities($v['lc']); ?>',//里程
+                        dlcb:'<?php echo htmlentities($v['dlcb']); ?>',//动力成本
+                        bycb:'<?php echo htmlentities($v['bycb']); ?>',//保养成本
+                        ys:'<?php echo htmlentities($v['ys']); ?>',//优势
+                        ls:'<?php echo htmlentities($v['ls']); ?>',//劣势
+                        wgS:<?php echo htmlentities($v['wgS']); ?>,
+                        cbS:<?php echo htmlentities($v['cbS']); ?>,
+                        dlS:<?php echo htmlentities($v['dlS']); ?>,
+                        zbS:<?php echo htmlentities($v['zbS']); ?>,
+                        bgimg:'url("<?php echo htmlentities($v['bgimg']); ?>")',
+                        bg:'<?php echo htmlentities($v['bg']); ?>',
+                        simg:'<?php echo htmlentities($v['simg']); ?>',
                         bimgs:[
-                            { title:'中控',img:'/template/jiliImgs/01.png' },
-                            { title:'天窗',img:'/template/jiliImgs/02.png' },
-                            { title:'轮胎',img:'/template/jiliImgs/03.png' },
-                            { title:'后备厢',img:'/template/jiliImgs/04.png' },
-                            { title:'发动机',img:'/template/jiliImgs/05.png' },
-                            { title:'车尾',img:'/template/jiliImgs/06.png' },
-                            { title:'车体分解图',img:'/template/jiliImgs/07.png' },
-                            { title:'车辆空间',img:'/template/jiliImgs/08.png' },
-                            { title:'安全气囊',img:'/template/jiliImgs/09.png' }
+                    <?php  $n = count($v['bimgs']); if(is_array($v['bimgs']) || $v['bimgs'] instanceof \think\Collection || $v['bimgs'] instanceof \think\Paginator): $k = 0; $__LIST__ = $v['bimgs'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$o): $mod = ($k % 2 );++$k;?>
+                            { title:'<?php echo htmlentities($o['title']); ?>',img:'<?php echo htmlentities($o['img']); ?>' }
+                                <?php if($k != $n): ?>,<?php endif; ?>
+                        <?php endforeach; endif; else: echo "" ;endif; ?>
+
                         ]
                     }
-		<?php if($i != ''): ?>,<?php endif; ?>
+					<?php if($i != $num): ?>,<?php endif; ?>
 					<?php endforeach; endif; else: echo "" ;endif; ?>
 
 
@@ -390,7 +388,7 @@
 					  this.bSwipers = this.cars[this.currentIndex].bimgs
 
 					  initFixSwiper()
-					  
+
 					}else if(i==1){
 					  this.introShow = false
 					  this.paramShow = true
@@ -455,9 +453,9 @@
 			lazyLoading : true,
 		})
 	}
-	
+
 	function initNewSwiper(that){
-		
+
 		  that.newSwiper = new Swiper('.cars-swiper .swiper-container', {
 				loop : true,
 				pagination: '.swiper-pagination',
@@ -480,7 +478,7 @@
 				watchSlidesVisibility : true,
 				onProgress: function(swiper, progress) {
 //					if($("body").width()>500)return
-					
+
 					if(that.initNewSwiperFlag){
 						that.initNewSwiperFlag = false
 						that.progress = true
@@ -501,7 +499,7 @@
                         console.log(that.cars);
                         console.log(that.currentIndex);
                         console.log(that.cars[that.currentIndex]);
-                        console.log(that.cars[that.currentIndex]).bimgs;
+                        console.log(that.cars[that.currentIndex].bimgs);
 //						that.bSwipers = that.cars[that.currentIndex].bimgs
 						that.bSwipers = that.cars[that.currentIndex].bimgs
 
@@ -543,13 +541,13 @@
 					},100)
 				}
 			});
-		
-		
+
+
 	}
-	
-	
+
+
 	function initSwiper(that){
-		
+
 		var certifySwiper = new Swiper('.cars-swiper .swiper-container', {
 			initialSlide :0,
 			watchSlidesProgress: true,
@@ -599,7 +597,7 @@
                  }else{
                  	that.currentIndex = (Math.abs(swiper.activeIndex -3)) % 6
                  }
-                 
+
 //				that.currentIndex = (Math.abs(swiper.activeIndex -3)) % 6
 				console.log(swiper.activeIndex,that.activeCar.name)
 //		      that.currentIndex = swiper.activeIndex % 6
@@ -613,12 +611,12 @@
 //		      	that.currentIndex = (swiper.activeIndex -3 ) % 6
 			},
 		});
-	}		
-		
-		
-		
-		
-		
+	}
+
+
+
+
+
 </script>
 		<div class="bottom">
 			<div class="link-wrap">

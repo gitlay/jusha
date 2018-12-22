@@ -68,12 +68,13 @@ class EmptyController extends Common
                     $list[$k]['bimgs']= array();
                     if(!empty($images)){
                         foreach ($images as $key=>$val){
-                            $list[$k]['bimgs'][] = array($title[$key],$val);
+                            $list[$k]['bimgs'][] = array('title'=>$title[$key],'img'=>$val);
                         }
                     }
                 }
 
                 $this->assign('cars',$list);
+
 
             } else {
                 $list = $this->dao->alias('a')
