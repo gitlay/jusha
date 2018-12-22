@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	<title>{$info['title']??($title ? $title : $sys.title)}</title>
+	<meta name="keywords" content="{$info['keywords']??($keywords ? $keywords : $sys.key)}"/>
+	<meta name="description" content="{$info['description']??($description ? $description : $sys.des)}"/>
+	<link rel="stylesheet" type="text/css" href="/template/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/template/css/other.css">
+</head>
+<body>
+{include file="common/header"/}
+<?php
+    $page = new app\services\PageService();
+    $info = $page->getPage(52);
+	$category = $page->getCategory(51,db('question'));
+?>
+	<div class="content">
+		<div class="banner">
+			<img src="{$image}" class="pc-banner">
+			<img src="{$imageMobile}" class="mb-banner">
+		</div>
+		<div class="floor">
+			<div class="floor-title">
+				{$category.catname}<br>
+				<span>{$category.catdir}</span>
+			</div>
+			{volist name="category['list']" id="v" moe="2"}
+			<div {eq name="mod" value="1"}class="left"{else/}class="right"{/eq}>
+				<div class="fixation">
+					<div class="img">
+						<img src="{$v.image}">
+					</div>
+					<div class="word">
+						<div class="big-number">
+							0{$i}
+						</div>
+						<div class="big-title">
+							{$v.title}<br>
+							<span>{$v.english}</span>
+						</div>
+						<div class="text">
+							{$v.content|raw}
+						</div>
+					</div>
+				</div>
+			</div>
+			{/volist}
+		</div>
+		<div class="driver">
+			<div class="floor-title">
+				{$info.catname}<br>
+				<span>{$info.catdir}</span>
+			</div>
+			<div class="bg-img">
+				<img src="/template/img/web/bottom-banner2.png" class="mb-bottom">
+				<img src="/template/img/web/bottom-banner.png" class="pc-bottom">
+			</div>
+			<div class="word-box">
+				{$info.content|raw}
+			</div>
+		</div>
+	</div>
+{include file="common/footer"/}
+

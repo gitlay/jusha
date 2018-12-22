@@ -1,0 +1,4 @@
+<?php
+//000000000000
+ exit();?>
+think_serialize:a:21:{s:2:"id";i:1;s:4:"name";s:12:"巨鲨汽车";s:3:"url";s:20:"http://cltshow.test/";s:5:"title";s:12:"巨鲨汽车";s:3:"key";s:12:"巨鲨汽车";s:3:"des";s:12:"巨鲨汽车";s:3:"bah";s:22:"陕ICP备15008093号-3";s:9:"copyright";s:39:"© 2005-2011,WWW.XXXXXX.COM巨鲨汽车";s:3:"ads";s:18:"西安市雁塔区";s:3:"tel";s:12:"400-800-7555";s:5:"email";s:17:"1109305556@qq.com";s:4:"logo";s:54:"/uploads/20181222/8f6c34f1d54b3c272306c6d92c1f4f67.png";s:5:"logoa";s:54:"/uploads/20181222/1e932a72b4c9e7c5ccf2f48c443bec0b.png";s:6:"mobile";s:4:"open";s:4:"code";s:5:"close";s:6:"qrcode";s:54:"/uploads/20181222/99e7bb0a5c547ba4ecf5a7c443bb7b6b.png";s:7:"qrcodec";s:54:"/uploads/20181222/d8852acfae8bc846fd93f2040fe69bd5.png";s:2:"qq";s:0:"";s:4:"host";s:0:"";s:8:"complain";s:0:"";s:7:"company";s:30:"河北淞甸科技有限公司";}

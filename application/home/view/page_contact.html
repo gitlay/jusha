@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>{$info['title']??($title ? $title : $sys.title)}</title>
+    <meta name="keywords" content="{$info['keywords']??($keywords ? $keywords : $sys.key)}"/>
+    <meta name="description" content="{$info['description']??($description ? $description : $sys.des)}"/>
+    <link rel="stylesheet" type="text/css" href="/template/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/template/css/other.css">
+</head>
+<body>
+{include file="common/header"/}
+<div class="content">
+    <div class="banner">
+        <img src="{$image}" class="pc-banner">
+        <img src="{$imageMobile}" class="mb-banner">
+    </div>
+    <div class="form-area">
+        <form>
+            <div class="form-line">
+                <div class="line-box">
+                    <div class="icon"><img src="/template/img/web/user.png"></div>
+                    <div class="input-box"><input placeholder="姓名" type="text" id="name"></div>
+                </div>
+            </div>
+            <div class="form-line">
+                <div class="line-box">
+                    <div class="icon"><img src="/template/img/web/telphone.png"></div>
+                    <div class="input-box"><input placeholder="联系方式" type="text" id="mobile"></div>
+                </div>
+            </div>
+            <div class="form-line">
+                <div class="line-box">
+                    <div class="icon"><img src="/template/img/web/time.png"></div>
+                    <div class="input-box"><input placeholder="驾龄" type="number" id="number"></div>
+                </div>
+            </div>
+            <div class="form-line">
+                <input type="button" value="提交" name="" class="sub-btn">
+            </div>
+        </form>
+    </div>
+    <div class="contact-information">
+        <div class="phone-number">
+            <div class="icon">
+                <img src="/template/img/web/phone.png">
+            </div>
+            <div class="number">
+                联系电话：{$sys.tel}
+            </div>
+        </div>
+        <div class="position">
+            <div class="icon">
+                <img src="/template/img/web/position.png">
+            </div>
+            <?php
+            $page = new app\services\PageService();
+
+            $category = $page->getCategory(54,db('address'));
+            ?>
+            <div class="address">
+                {volist name="category['list']" id="v"}
+                <span lon="{$v.lon}" lat="{$v.lat}" onclick="  initMap({$v.lon},{$v.lat},this)">{$v.address}</span><br>
+                {/volist}
+            </div>
+        </div>
+    </div>
+    <div class="map">
+        <div class="fixation">
+            <div class="map-area" id="map-area">
+
+            </div>
+            <div class="address" id="address">
+                石家庄市长安区建华北大街138号百川大厦东塔22层
+            </div>
+        </div>
+    </div>
+    <div class="qr-code">
+        <div class="fixation">
+            <div class="code-item">
+                <div class="code-img"><img src="{$sys.qrcodec}" alt=""></div>
+                <div class="code-word">扫一扫进入手机端车辆店铺</div>
+            </div>
+            <div class="code-item">
+                <div class="code-img"><img src="{$sys.qrcode}" alt=""></div>
+                <div class="code-word">扫一扫进入手机端公众号</div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="common/footer"/}
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=56srZYI3vAB9XzW2B0u544hHhsdWdE7X"></script>
+
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(lon,lat,obj){
+        $('#address').text($(obj).text())
+        createMap(lon,lat);//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMapOverlay(lon,lat);//向地图添加覆盖物
+
+    }
+    function createMap(lon,lat){
+        map = new BMap.Map("map-area");
+        map.centerAndZoom(new BMap.Point(lon,lat),18);
+    }
+    function setMapEvent(){
+        map.enableScrollWheelZoom();
+        map.enableKeyboard();
+        map.enableDragging();
+        map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+        target.addEventListener("click",function(){
+            target.openInfoWindow(window);
+        });
+    }
+    function addMapOverlay(lon,lat){
+        var markers = [
+
+            {content:"巨鲨汽车",title:"巨鲨汽车",imageOffset: {width:-46,height:-21},position:{lat:lat,lng:lon}}
+        ];
+        for(var index = 0; index < markers.length; index++ ){
+            var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+            var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+                    imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+                })});
+            var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+            var opts = {
+                width: 200,
+                title: markers[index].title,
+                enableMessage: false
+            };
+            var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+            marker.setLabel(label);
+            addClickHandler(marker,infoWindow);
+            map.addOverlay(marker);
+        };
+    }
+    //向地图添加控件
+    function addMapControl(){
+        var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+        scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+        map.addControl(scaleControl);
+        var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+        map.addControl(navControl);
+        var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+        map.addControl(overviewControl);
+    }
+    var map;
+    $(function () {
+        $('.address span:first').click();
+    })
+
+</script>
+
+<script>
+    $('.sub-btn').click(function(){
+        var name = $('#name').val();
+        var mobile = $('#mobile').val();
+        var number = $('#number').val();
+
+        if($.trim(name)==''){
+            alert('姓名不能为空');
+            return false;
+        }
+        if($.trim(mobile)==''){
+            alert('联系方式不能为空');
+            return false;
+        }
+        if($.trim(number)==''){
+            alert('驾龄不能为空');
+            return false;
+        }
+
+        $.post("{:url('home/index/senmsg')}",{name:name,mobile:mobile,number:number},function(data){
+            console.log(data);
+            if(data.status==1){
+                alert('留言成功！感谢您对我们的支持！');
+                window.location.reload()
+            }else{
+                alert('留言失败！重新提交试试！');
+            }
+        })
+    })
+</script>

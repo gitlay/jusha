@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	<title>{$info['title']??($title ? $title : $sys.title)}</title>
+	<meta name="keywords" content="{$info['keywords']??($keywords ? $keywords : $sys.key)}" />
+	<meta name="description" content="{$info['description']??($description ? $description : $sys.des)}" />
+	<link rel="stylesheet" type="text/css" href="/template/css/style.css">
+</head>
+<body>
+{include file="common/header"/}
+	<div class="container">
+		<div class="main-img">
+			<div class="img-box">
+				<img src="/template/img/web/main.png" alt="" class="mobile-main-img">
+				<img src="/template/img/web/pc-main.png" alt="" class="pc-main-img">
+			</div>
+			<div class="fixation">
+				<div class="list">
+					<div class="add-icon">
+						<div class="circle">
+							+
+						</div>
+					</div>
+					<div class="big-word">
+						体面
+					</div>
+					<div class="small-word">
+						做自己的老板 让每一滴血汗更加体面尊严
+					</div>
+				</div>
+				<div class="list">
+					<div class="add-icon">
+						<div class="circle">
+							+
+						</div>
+					</div>
+					<div class="big-word">
+						自由
+					</div>
+					<div class="small-word">
+						上班自由灵活 时间地点随你选告别传统打卡模式
+					</div>
+				</div>
+				<div class="list">
+					<div class="add-icon">
+						<div class="circle">
+							+
+						</div>
+					</div>
+					<div class="big-word">
+						责任
+					</div>
+					<div class="small-word">
+						我们的每一份努力 都是为城市出行做贡献 让出行更美好。
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="button-list">
+			<div class="btn"><a href=""><span class="btn-span">无车加盟</span><span class="img"><img src="img/web/right.png" alt=""></span></a></div>
+			<div class="btn"><a href=""><span class="btn-span">有车加盟</span><span class="img"><img src="img/web/right.png" alt=""></span></a></div>
+		</div>
+	</div>
+	{include file="common/footer"/}

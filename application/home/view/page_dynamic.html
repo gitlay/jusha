@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	<title>{$info['title']??($title ? $title : $sys.title)}</title>
+	<meta name="keywords" content="{$info['keywords']??($keywords ? $keywords : $sys.key)}"/>
+	<meta name="description" content="{$info['description']??($description ? $description : $sys.des)}"/>
+	<link rel="stylesheet" type="text/css" href="/template/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/template/css/other.css">
+</head>
+<body>
+{include file="common/header"/}
+	<div class="content">
+		<div class="banner">
+			<img src="{$image}" class="pc-banner">
+			<img src="{$imageMobile}" class="mb-banner">
+		</div>
+		<div class="floor">
+			<div class="tab-nav">
+				<div class="fixation">
+					{volist name="child" id="v"}
+					<div class="tab-nav-item" {eq name="i" value="1"} id="selected"{/eq}>{$v.catname}</div>
+					{/volist}
+				</div>
+			</div>
+			<div class="window">
+				<?php
+				$page = new app\services\PageService();
+				?>
+				{volist name="child" id="v"}
+				<?php $info = $page->getPage($v['id']);?>
+				<div class="window-item" {eq name="i" value="1"}id="item-selected"{/eq}>
+						{$info.content|raw}
+				</div>
+				{/volist}
+			</div>
+		</div>
+	</div>
+{include file="common/footer"/}
