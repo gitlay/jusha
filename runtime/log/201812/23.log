@@ -7021,3 +7021,1342 @@
 [ sql ] [ DB ] CONNECT:[ UseTime:0.004684s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
 [ sql ] [ SQL ] SHOW COLUMNS FROM `clt_system` [ RunTime:0.041336s ]
 [ sql ] [ SQL ] SELECT * FROM `clt_system` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001035s ]
+---------------------------------------------------------------
+[ 2018-12-23T13:40:51+08:00 ] 113.44.107.49 GET jusha.gitlay.com/
+[运行时间：0.048546s] [吞吐率：20.60req/s] [内存消耗：3,800.55kb] [文件加载：80]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://106.12.199.28:8888/site',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/home/view/index_index.html [ array (
+  0 => 'sys',
+  1 => 'address',
+  2 => 'action',
+  3 => 'controller',
+  4 => 'catname',
+  5 => 'title',
+  6 => 'keywords',
+  7 => 'description',
+  8 => 'image',
+  9 => 'imageMobile',
+  10 => 'category',
+  11 => 'adList',
+  12 => 'bannerList',
+  13 => 'linkList',
+  14 => 'changyan',
+  15 => 'time',
+  16 => 'job',
+  17 => 'list',
+  18 => 'style',
+  19 => 'js',
+  20 => 'express',
+  21 => 'increment',
+  22 => 'news',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000789s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.001025s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000399s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.000869s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000383s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000499s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.000745s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000421s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000557s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000467s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_article` [ RunTime:0.000896s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`c`.`catdir`,`c`.`catname` FROM `clt_article` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  `createtime` > 1545543651 ORDER BY `createtime` DESC LIMIT 15 [ RunTime:0.000448s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000441s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_feast` [ RunTime:0.000749s ]
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '11-17'  AND `type` = 2 LIMIT 1 [ RunTime:0.000361s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000411s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '12-23'  AND `type` = 1 LIMIT 1 [ RunTime:0.000334s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 32 ORDER BY `sort` [ RunTime:0.000645s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 37 ORDER BY `sort` [ RunTime:0.000526s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 1 ORDER BY `sort` [ RunTime:0.000489s ]
+---------------------------------------------------------------
+[ 2018-12-23T13:40:57+08:00 ] 113.44.107.28 GET jusha.gitlay.com/
+[运行时间：0.043418s] [吞吐率：23.03req/s] [内存消耗：3,634.70kb] [文件加载：77]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://jusha.gitlay.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/home/view/index_index.html [ array (
+  0 => 'sys',
+  1 => 'address',
+  2 => 'action',
+  3 => 'controller',
+  4 => 'catname',
+  5 => 'title',
+  6 => 'keywords',
+  7 => 'description',
+  8 => 'image',
+  9 => 'imageMobile',
+  10 => 'category',
+  11 => 'adList',
+  12 => 'bannerList',
+  13 => 'linkList',
+  14 => 'changyan',
+  15 => 'time',
+  16 => 'job',
+  17 => 'list',
+  18 => 'style',
+  19 => 'js',
+  20 => 'express',
+  21 => 'increment',
+  22 => 'news',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001131s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.001069s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.000822s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000356s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000402s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.000712s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000395s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000516s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000382s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_article` [ RunTime:0.000759s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`c`.`catdir`,`c`.`catname` FROM `clt_article` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  `createtime` > 1545543657 ORDER BY `createtime` DESC LIMIT 15 [ RunTime:0.000424s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000372s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_feast` [ RunTime:0.000621s ]
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '11-17'  AND `type` = 2 LIMIT 1 [ RunTime:0.000370s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000341s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '12-23'  AND `type` = 1 LIMIT 1 [ RunTime:0.000350s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 32 ORDER BY `sort` [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 37 ORDER BY `sort` [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 1 ORDER BY `sort` [ RunTime:0.000474s ]
+---------------------------------------------------------------
+[ 2018-12-23T13:40:59+08:00 ] 113.44.107.28 GET jusha.gitlay.com/
+[运行时间：0.042442s] [吞吐率：23.56req/s] [内存消耗：3,634.70kb] [文件加载：77]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://jusha.gitlay.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/home/view/index_index.html [ array (
+  0 => 'sys',
+  1 => 'address',
+  2 => 'action',
+  3 => 'controller',
+  4 => 'catname',
+  5 => 'title',
+  6 => 'keywords',
+  7 => 'description',
+  8 => 'image',
+  9 => 'imageMobile',
+  10 => 'category',
+  11 => 'adList',
+  12 => 'bannerList',
+  13 => 'linkList',
+  14 => 'changyan',
+  15 => 'time',
+  16 => 'job',
+  17 => 'list',
+  18 => 'style',
+  19 => 'js',
+  20 => 'express',
+  21 => 'increment',
+  22 => 'news',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000731s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.000996s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000396s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.000812s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000361s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000400s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.000712s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000404s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000443s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000386s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_article` [ RunTime:0.000945s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`c`.`catdir`,`c`.`catname` FROM `clt_article` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  `createtime` > 1545543659 ORDER BY `createtime` DESC LIMIT 15 [ RunTime:0.000351s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000396s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_feast` [ RunTime:0.000622s ]
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '11-17'  AND `type` = 2 LIMIT 1 [ RunTime:0.000353s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000351s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '12-23'  AND `type` = 1 LIMIT 1 [ RunTime:0.000329s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 32 ORDER BY `sort` [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 37 ORDER BY `sort` [ RunTime:0.000517s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 1 ORDER BY `sort` [ RunTime:0.000518s ]
+---------------------------------------------------------------
+[ 2018-12-23T13:41:05+08:00 ] 113.44.107.28 GET jusha.gitlay.com/
+[运行时间：0.041974s] [吞吐率：23.82req/s] [内存消耗：3,634.70kb] [文件加载：77]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://jusha.gitlay.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/home/view/index_index.html [ array (
+  0 => 'sys',
+  1 => 'address',
+  2 => 'action',
+  3 => 'controller',
+  4 => 'catname',
+  5 => 'title',
+  6 => 'keywords',
+  7 => 'description',
+  8 => 'image',
+  9 => 'imageMobile',
+  10 => 'category',
+  11 => 'adList',
+  12 => 'bannerList',
+  13 => 'linkList',
+  14 => 'changyan',
+  15 => 'time',
+  16 => 'job',
+  17 => 'list',
+  18 => 'style',
+  19 => 'js',
+  20 => 'express',
+  21 => 'increment',
+  22 => 'news',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000693s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.001026s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000388s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.001056s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000408s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000387s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.000713s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000429s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000418s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000354s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_article` [ RunTime:0.000770s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`c`.`catdir`,`c`.`catname` FROM `clt_article` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  `createtime` > 1545543665 ORDER BY `createtime` DESC LIMIT 15 [ RunTime:0.000439s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000362s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_feast` [ RunTime:0.000644s ]
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '11-17'  AND `type` = 2 LIMIT 1 [ RunTime:0.000338s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000343s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '12-23'  AND `type` = 1 LIMIT 1 [ RunTime:0.000309s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 32 ORDER BY `sort` [ RunTime:0.000567s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 37 ORDER BY `sort` [ RunTime:0.000488s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 1 ORDER BY `sort` [ RunTime:0.000508s ]
+---------------------------------------------------------------
+[ 2018-12-23T13:41:21+08:00 ] 113.44.107.28 GET jusha.gitlay.com/
+[运行时间：0.052139s] [吞吐率：19.18req/s] [内存消耗：3,634.70kb] [文件加载：77]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://jusha.gitlay.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/home/view/index_index.html [ array (
+  0 => 'sys',
+  1 => 'address',
+  2 => 'action',
+  3 => 'controller',
+  4 => 'catname',
+  5 => 'title',
+  6 => 'keywords',
+  7 => 'description',
+  8 => 'image',
+  9 => 'imageMobile',
+  10 => 'category',
+  11 => 'adList',
+  12 => 'bannerList',
+  13 => 'linkList',
+  14 => 'changyan',
+  15 => 'time',
+  16 => 'job',
+  17 => 'list',
+  18 => 'style',
+  19 => 'js',
+  20 => 'express',
+  21 => 'increment',
+  22 => 'news',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000863s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.001330s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000525s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.001019s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000495s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000449s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.001028s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000530s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000604s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000481s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_article` [ RunTime:0.001053s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`c`.`catdir`,`c`.`catname` FROM `clt_article` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  `createtime` > 1545543681 ORDER BY `createtime` DESC LIMIT 15 [ RunTime:0.000480s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000467s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_feast` [ RunTime:0.000865s ]
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '11-17'  AND `type` = 2 LIMIT 1 [ RunTime:0.000422s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000455s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '12-23'  AND `type` = 1 LIMIT 1 [ RunTime:0.000373s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 32 ORDER BY `sort` [ RunTime:0.000861s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 37 ORDER BY `sort` [ RunTime:0.000720s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 1 ORDER BY `sort` [ RunTime:0.000685s ]
+---------------------------------------------------------------
+[ 2018-12-23T13:42:16+08:00 ] 113.44.107.28 GET jusha.gitlay.com/
+[运行时间：0.043168s] [吞吐率：23.17req/s] [内存消耗：3,634.70kb] [文件加载：77]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://jusha.gitlay.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/home/view/index_index.html [ array (
+  0 => 'sys',
+  1 => 'address',
+  2 => 'action',
+  3 => 'controller',
+  4 => 'catname',
+  5 => 'title',
+  6 => 'keywords',
+  7 => 'description',
+  8 => 'image',
+  9 => 'imageMobile',
+  10 => 'category',
+  11 => 'adList',
+  12 => 'bannerList',
+  13 => 'linkList',
+  14 => 'changyan',
+  15 => 'time',
+  16 => 'job',
+  17 => 'list',
+  18 => 'style',
+  19 => 'js',
+  20 => 'express',
+  21 => 'increment',
+  22 => 'news',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000936s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.001016s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000394s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.000779s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000375s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000432s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.000738s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000433s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000462s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000425s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_article` [ RunTime:0.000831s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`c`.`catdir`,`c`.`catname` FROM `clt_article` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  `createtime` > 1545543736 ORDER BY `createtime` DESC LIMIT 15 [ RunTime:0.000368s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000446s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_feast` [ RunTime:0.000681s ]
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '11-17'  AND `type` = 2 LIMIT 1 [ RunTime:0.000360s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000381s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '12-23'  AND `type` = 1 LIMIT 1 [ RunTime:0.000302s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 32 ORDER BY `sort` [ RunTime:0.000561s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 37 ORDER BY `sort` [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 1 ORDER BY `sort` [ RunTime:0.000502s ]
+---------------------------------------------------------------
+[ 2018-12-23T13:42:44+08:00 ] 113.44.107.28 GET jusha.gitlay.com/
+[运行时间：0.053728s] [吞吐率：18.61req/s] [内存消耗：3,634.66kb] [文件加载：77]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/home/view/index_index.html [ array (
+  0 => 'sys',
+  1 => 'address',
+  2 => 'action',
+  3 => 'controller',
+  4 => 'catname',
+  5 => 'title',
+  6 => 'keywords',
+  7 => 'description',
+  8 => 'image',
+  9 => 'imageMobile',
+  10 => 'category',
+  11 => 'adList',
+  12 => 'bannerList',
+  13 => 'linkList',
+  14 => 'changyan',
+  15 => 'time',
+  16 => 'job',
+  17 => 'list',
+  18 => 'style',
+  19 => 'js',
+  20 => 'express',
+  21 => 'increment',
+  22 => 'news',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001063s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.000984s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.000730s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000357s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000476s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.000780s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000444s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000369s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_article` [ RunTime:0.000842s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`c`.`catdir`,`c`.`catname` FROM `clt_article` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  `createtime` > 1545543764 ORDER BY `createtime` DESC LIMIT 15 [ RunTime:0.000355s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000385s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_feast` [ RunTime:0.000636s ]
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '11-17'  AND `type` = 2 LIMIT 1 [ RunTime:0.000357s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000357s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '12-23'  AND `type` = 1 LIMIT 1 [ RunTime:0.000305s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 32 ORDER BY `sort` [ RunTime:0.000531s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 37 ORDER BY `sort` [ RunTime:0.000499s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 1 ORDER BY `sort` [ RunTime:0.000473s ]
+---------------------------------------------------------------
+[ 2018-12-23T13:42:47+08:00 ] 113.44.107.28 GET jusha.gitlay.com/home/goodness/index/catId/50.html
+[运行时间：0.045527s] [吞吐率：21.96req/s] [内存消耗：3,548.16kb] [文件加载：81]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://jusha.gitlay.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'catId' => '50',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/home/view/page_advantage.html [ array (
+  0 => 'sys',
+  1 => 'address',
+  2 => 'action',
+  3 => 'controller',
+  4 => 'child',
+  5 => 'catname',
+  6 => 'title',
+  7 => 'keywords',
+  8 => 'description',
+  9 => 'image',
+  10 => 'imageMobile',
+  11 => 'category',
+  12 => 'adList',
+  13 => 'bannerList',
+  14 => 'linkList',
+  15 => 'changyan',
+  16 => 'time',
+  17 => 'job',
+  18 => 'info',
+) ]
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000662s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.001053s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000394s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.000757s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` = 50 LIMIT 1 [ RunTime:0.000938s ]
+[ sql ] [ SQL ] SELECT `parentid` FROM `clt_category` WHERE  `id` = 50 ORDER BY `sort` LIMIT 1 [ RunTime:0.000329s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 50 ORDER BY `sort` [ RunTime:0.000460s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000397s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.000708s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000411s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000396s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_page` [ RunTime:0.000725s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_page` WHERE  `id` = 50 LIMIT 1 [ RunTime:0.000350s ]
+[ sql ] [ SQL ] SELECT `template_show` FROM `clt_category` WHERE  `id` = 50 LIMIT 1 [ RunTime:0.000354s ]
+[ sql ] [ SQL ] SELECT `page`.*,`cat`.`catname`,`cat`.`image`,`cat`.`imageMobile`,`cat`.`catdir` FROM `clt_page` `page` LEFT JOIN `clt_category` `cat` ON `cat`.`id`=`page`.`id` WHERE  ( page.id = 52 and (page.status = 1 or (page.status = 0 and page.createtime <1545543767)) ) LIMIT 1 [ RunTime:0.000523s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000373s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` = 51 LIMIT 1 [ RunTime:0.000462s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_question` [ RunTime:0.000803s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_question` WHERE  ( catid = 51 and (status = 1 or (status = 0 and createtime <1545543767)) ) ORDER BY `sort` ASC,`createtime` DESC [ RunTime:0.000471s ]
+---------------------------------------------------------------
+[ 2018-12-23T13:43:08+08:00 ] 113.44.107.28 GET jusha.gitlay.com/home/goodness/index/catId/50.html
+[运行时间：0.041543s] [吞吐率：24.07req/s] [内存消耗：3,375.43kb] [文件加载：78]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://jusha.gitlay.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'catId' => '50',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/home/view/page_advantage.html [ array (
+  0 => 'sys',
+  1 => 'address',
+  2 => 'action',
+  3 => 'controller',
+  4 => 'child',
+  5 => 'catname',
+  6 => 'title',
+  7 => 'keywords',
+  8 => 'description',
+  9 => 'image',
+  10 => 'imageMobile',
+  11 => 'category',
+  12 => 'adList',
+  13 => 'bannerList',
+  14 => 'linkList',
+  15 => 'changyan',
+  16 => 'time',
+  17 => 'job',
+  18 => 'info',
+) ]
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000684s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.001005s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000418s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.000749s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` = 50 LIMIT 1 [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SELECT `parentid` FROM `clt_category` WHERE  `id` = 50 ORDER BY `sort` LIMIT 1 [ RunTime:0.000340s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 50 ORDER BY `sort` [ RunTime:0.000438s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000417s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.000740s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000394s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_page` [ RunTime:0.000658s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_page` WHERE  `id` = 50 LIMIT 1 [ RunTime:0.000341s ]
+[ sql ] [ SQL ] SELECT `template_show` FROM `clt_category` WHERE  `id` = 50 LIMIT 1 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SELECT `page`.*,`cat`.`catname`,`cat`.`image`,`cat`.`imageMobile`,`cat`.`catdir` FROM `clt_page` `page` LEFT JOIN `clt_category` `cat` ON `cat`.`id`=`page`.`id` WHERE  ( page.id = 52 and (page.status = 1 or (page.status = 0 and page.createtime <1545543788)) ) LIMIT 1 [ RunTime:0.000453s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000368s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` = 51 LIMIT 1 [ RunTime:0.000493s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_question` [ RunTime:0.000817s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_question` WHERE  ( catid = 51 and (status = 1 or (status = 0 and createtime <1545543788)) ) ORDER BY `sort` ASC,`createtime` DESC [ RunTime:0.000452s ]
+---------------------------------------------------------------
+[ 2018-12-23T13:43:14+08:00 ] 113.44.107.28 GET jusha.gitlay.com/home/join/index/catId/53.html
+[运行时间：0.047063s] [吞吐率：21.25req/s] [内存消耗：3,545.52kb] [文件加载：81]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://jusha.gitlay.com/home/goodness/index/catId/50.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'catId' => '53',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/home/view/page_contact.html [ array (
+  0 => 'sys',
+  1 => 'address',
+  2 => 'action',
+  3 => 'controller',
+  4 => 'child',
+  5 => 'catname',
+  6 => 'title',
+  7 => 'keywords',
+  8 => 'description',
+  9 => 'image',
+  10 => 'imageMobile',
+  11 => 'category',
+  12 => 'adList',
+  13 => 'bannerList',
+  14 => 'linkList',
+  15 => 'changyan',
+  16 => 'time',
+  17 => 'job',
+  18 => 'info',
+) ]
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000713s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.000734s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` = 53 LIMIT 1 [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SELECT `parentid` FROM `clt_category` WHERE  `id` = 53 ORDER BY `sort` LIMIT 1 [ RunTime:0.000309s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 53 ORDER BY `sort` [ RunTime:0.000463s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000438s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.000648s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_page` [ RunTime:0.000857s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_page` WHERE  `id` = 53 LIMIT 1 [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SELECT `template_show` FROM `clt_category` WHERE  `id` = 53 LIMIT 1 [ RunTime:0.000317s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000594s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` = 54 LIMIT 1 [ RunTime:0.000597s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_address` [ RunTime:0.001018s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_address` WHERE  ( catid = 54 and (status = 1 or (status = 0 and createtime <1545543794)) ) ORDER BY `sort` ASC,`createtime` DESC [ RunTime:0.000530s ]
+---------------------------------------------------------------
+[ 2018-12-23T13:43:35+08:00 ] 113.44.107.28 GET jusha.gitlay.com/home/join/index/catId/53.html
+[运行时间：0.053994s] [吞吐率：18.52req/s] [内存消耗：3,368.02kb] [文件加载：78]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://jusha.gitlay.com/home/goodness/index/catId/50.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'catId' => '53',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/home/view/page_contact.html [ array (
+  0 => 'sys',
+  1 => 'address',
+  2 => 'action',
+  3 => 'controller',
+  4 => 'child',
+  5 => 'catname',
+  6 => 'title',
+  7 => 'keywords',
+  8 => 'description',
+  9 => 'image',
+  10 => 'imageMobile',
+  11 => 'category',
+  12 => 'adList',
+  13 => 'bannerList',
+  14 => 'linkList',
+  15 => 'changyan',
+  16 => 'time',
+  17 => 'job',
+  18 => 'info',
+) ]
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000802s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.001178s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.000925s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` = 53 LIMIT 1 [ RunTime:0.000527s ]
+[ sql ] [ SQL ] SELECT `parentid` FROM `clt_category` WHERE  `id` = 53 ORDER BY `sort` LIMIT 1 [ RunTime:0.000350s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 53 ORDER BY `sort` [ RunTime:0.000573s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000498s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.000862s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000471s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_page` [ RunTime:0.000832s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_page` WHERE  `id` = 53 LIMIT 1 [ RunTime:0.000373s ]
+[ sql ] [ SQL ] SELECT `template_show` FROM `clt_category` WHERE  `id` = 53 LIMIT 1 [ RunTime:0.000349s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000457s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` = 54 LIMIT 1 [ RunTime:0.000562s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_address` [ RunTime:0.001008s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_address` WHERE  ( catid = 54 and (status = 1 or (status = 0 and createtime <1545543815)) ) ORDER BY `sort` ASC,`createtime` DESC [ RunTime:0.000598s ]
+---------------------------------------------------------------
+[ 2018-12-23T13:43:46+08:00 ] 113.44.107.28 GET jusha.gitlay.com/home/car/index/catId/55.html
+[运行时间：0.048484s] [吞吐率：20.63req/s] [内存消耗：3,825.01kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://jusha.gitlay.com/home/join/index/catId/53.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'catId' => '55',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/home/view/cars_list.html [ array (
+  0 => 'sys',
+  1 => 'address',
+  2 => 'action',
+  3 => 'controller',
+  4 => 'child',
+  5 => 'catname',
+  6 => 'title',
+  7 => 'keywords',
+  8 => 'description',
+  9 => 'image',
+  10 => 'imageMobile',
+  11 => 'category',
+  12 => 'adList',
+  13 => 'bannerList',
+  14 => 'linkList',
+  15 => 'changyan',
+  16 => 'time',
+  17 => 'job',
+  18 => 'cars',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000706s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.001019s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000405s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.000763s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` = 55 LIMIT 1 [ RunTime:0.000454s ]
+[ sql ] [ SQL ] SELECT `parentid` FROM `clt_category` WHERE  `id` = 55 ORDER BY `sort` LIMIT 1 [ RunTime:0.000317s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 55 ORDER BY `sort` [ RunTime:0.000460s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000528s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.000634s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000462s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000358s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT `arrchildid` FROM `clt_category` WHERE  `id` = 55 LIMIT 1 [ RunTime:0.000297s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_cars` [ RunTime:0.000944s ]
+[ sql ] [ SQL ] SELECT `a`.*,`c`.`catdir` FROM `clt_cars` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  (  catid = 55 and (status = 1 or (status = 0 and createtime <1545543826)) and address_id=1 ) ORDER BY `sort` ASC,`createtime` DESC [ RunTime:0.001384s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000381s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT `template_list` FROM `clt_category` WHERE  `id` = 55 LIMIT 1 [ RunTime:0.000284s ]
+[ error ] [8]未定义数组下标: 0[/www/wwwroot/jusha/application/home/controller/Common.php:58]
+---------------------------------------------------------------
+[ 2018-12-23T13:43:57+08:00 ] 113.44.107.49 GET jusha.gitlay.com/
+[运行时间：0.043558s] [吞吐率：22.96req/s] [内存消耗：3,634.82kb] [文件加载：77]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => '',
+  'route' => 'home/index/index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+    'complete_match' => true,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://jusha.gitlay.com/home/car/index/catId/55.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/home/view/index_index.html [ array (
+  0 => 'sys',
+  1 => 'address',
+  2 => 'action',
+  3 => 'controller',
+  4 => 'catname',
+  5 => 'title',
+  6 => 'keywords',
+  7 => 'description',
+  8 => 'image',
+  9 => 'imageMobile',
+  10 => 'category',
+  11 => 'adList',
+  12 => 'bannerList',
+  13 => 'linkList',
+  14 => 'changyan',
+  15 => 'time',
+  16 => 'job',
+  17 => 'list',
+  18 => 'style',
+  19 => 'js',
+  20 => 'express',
+  21 => 'increment',
+  22 => 'news',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000682s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.000918s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000399s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.000784s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000384s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000410s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000453s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000450s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000348s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_article` [ RunTime:0.000801s ]
+[ sql ] [ SQL ] SELECT `a`.`id`,`c`.`catdir`,`c`.`catname` FROM `clt_article` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  `createtime` > 1545543837 ORDER BY `createtime` DESC LIMIT 15 [ RunTime:0.000356s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000361s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_feast` [ RunTime:0.000684s ]
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '11-17'  AND `type` = 2 LIMIT 1 [ RunTime:0.000340s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000361s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT `id` FROM `clt_feast` WHERE  `feast_date` = '12-23'  AND `type` = 1 LIMIT 1 [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 32 ORDER BY `sort` [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 37 ORDER BY `sort` [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 1 ORDER BY `sort` [ RunTime:0.000524s ]
+---------------------------------------------------------------
+[ 2018-12-23T13:44:00+08:00 ] 113.44.107.28 GET jusha.gitlay.com/home/index/setconfig.html?address_id=2
+[运行时间：0.035011s] [吞吐率：28.56req/s] [内存消耗：3,206.02kb] [文件加载：73]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://jusha.gitlay.com/',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'address_id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001509s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.001034s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000389s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.000887s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000398s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000381s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.000719s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000438s ]
+---------------------------------------------------------------
+[ 2018-12-23T13:44:02+08:00 ] 113.44.107.28 GET jusha.gitlay.com/home/join/index/catId/53.html
+[运行时间：0.040545s] [吞吐率：24.66req/s] [内存消耗：3,367.60kb] [文件加载：78]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://jusha.gitlay.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'catId' => '53',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/home/view/page_contact.html [ array (
+  0 => 'sys',
+  1 => 'address',
+  2 => 'action',
+  3 => 'controller',
+  4 => 'child',
+  5 => 'catname',
+  6 => 'title',
+  7 => 'keywords',
+  8 => 'description',
+  9 => 'image',
+  10 => 'imageMobile',
+  11 => 'category',
+  12 => 'adList',
+  13 => 'bannerList',
+  14 => 'linkList',
+  15 => 'changyan',
+  16 => 'time',
+  17 => 'job',
+  18 => 'info',
+) ]
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000683s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.000895s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.000754s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` = 53 LIMIT 1 [ RunTime:0.000440s ]
+[ sql ] [ SQL ] SELECT `parentid` FROM `clt_category` WHERE  `id` = 53 ORDER BY `sort` LIMIT 1 [ RunTime:0.000307s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 53 ORDER BY `sort` [ RunTime:0.000478s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000384s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.000679s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000450s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_page` [ RunTime:0.000722s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_page` WHERE  `id` = 53 LIMIT 1 [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SELECT `template_show` FROM `clt_category` WHERE  `id` = 53 LIMIT 1 [ RunTime:0.000298s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000379s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` = 54 LIMIT 1 [ RunTime:0.000479s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_address` [ RunTime:0.000835s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_address` WHERE  ( catid = 54 and (status = 1 or (status = 0 and createtime <1545543842)) ) ORDER BY `sort` ASC,`createtime` DESC [ RunTime:0.000545s ]
+---------------------------------------------------------------
+[ 2018-12-23T13:44:08+08:00 ] 113.44.107.28 GET jusha.gitlay.com/home/car/index/catId/55.html
+[运行时间：0.038889s] [吞吐率：25.71req/s] [内存消耗：3,565.81kb] [文件加载：81]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://jusha.gitlay.com/home/join/index/catId/53.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'catId' => '55',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/home/view/cars_list.html [ array (
+  0 => 'sys',
+  1 => 'address',
+  2 => 'action',
+  3 => 'controller',
+  4 => 'child',
+  5 => 'catname',
+  6 => 'title',
+  7 => 'keywords',
+  8 => 'description',
+  9 => 'image',
+  10 => 'imageMobile',
+  11 => 'category',
+  12 => 'adList',
+  13 => 'bannerList',
+  14 => 'linkList',
+  15 => 'changyan',
+  16 => 'time',
+  17 => 'job',
+  18 => 'cars',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000556s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.000969s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.000726s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` = 55 LIMIT 1 [ RunTime:0.000421s ]
+[ sql ] [ SQL ] SELECT `parentid` FROM `clt_category` WHERE  `id` = 55 ORDER BY `sort` LIMIT 1 [ RunTime:0.000356s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 55 ORDER BY `sort` [ RunTime:0.000431s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000392s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000417s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000417s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000397s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT `arrchildid` FROM `clt_category` WHERE  `id` = 55 LIMIT 1 [ RunTime:0.000286s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_cars` [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SELECT `a`.*,`c`.`catdir` FROM `clt_cars` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  (  catid = 55 and (status = 1 or (status = 0 and createtime <1545543848)) and address_id=2 ) ORDER BY `sort` ASC,`createtime` DESC [ RunTime:0.000671s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000368s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT `template_list` FROM `clt_category` WHERE  `id` = 55 LIMIT 1 [ RunTime:0.000284s ]
+[ error ] [8]未定义数组下标: 0[/www/wwwroot/jusha/application/home/controller/Common.php:58]
+---------------------------------------------------------------
+[ 2018-12-23T13:44:19+08:00 ] 113.44.107.28 GET jusha.gitlay.com/home/car/index/catId/55.html
+[运行时间：0.039608s] [吞吐率：25.25req/s] [内存消耗：3,565.98kb] [文件加载：81]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'referer' => 'http://jusha.gitlay.com/home/join/index/catId/53.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'catId' => '55',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/home/view/cars_list.html [ array (
+  0 => 'sys',
+  1 => 'address',
+  2 => 'action',
+  3 => 'controller',
+  4 => 'child',
+  5 => 'catname',
+  6 => 'title',
+  7 => 'keywords',
+  8 => 'description',
+  9 => 'image',
+  10 => 'imageMobile',
+  11 => 'category',
+  12 => 'adList',
+  13 => 'bannerList',
+  14 => 'linkList',
+  15 => 'changyan',
+  16 => 'time',
+  17 => 'job',
+  18 => 'cars',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000706s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_field` [ RunTime:0.000953s ]
+[ sql ] [ SQL ] SELECT `setup` FROM `clt_field` WHERE  `id` = 240 LIMIT 1 [ RunTime:0.000371s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_category` [ RunTime:0.000775s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `id` = 55 LIMIT 1 [ RunTime:0.000423s ]
+[ sql ] [ SQL ] SELECT `parentid` FROM `clt_category` WHERE  `id` = 55 ORDER BY `sort` LIMIT 1 [ RunTime:0.000311s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 55 ORDER BY `sort` [ RunTime:0.000434s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000411s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_plugin` [ RunTime:0.000750s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_plugin` WHERE  `code` = 'changyan' LIMIT 1 [ RunTime:0.000424s ]
+[ sql ] [ SQL ] SELECT * FROM `clt_category` WHERE  `parentid` = 51  AND `ismenu` = 1 ORDER BY `sort` [ RunTime:0.000415s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000405s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT `arrchildid` FROM `clt_category` WHERE  `id` = 55 LIMIT 1 [ RunTime:0.000289s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `clt_cars` [ RunTime:0.000873s ]
+[ sql ] [ SQL ] SELECT `a`.*,`c`.`catdir` FROM `clt_cars` `a` LEFT JOIN `clt_category` `c` ON `a`.`catid`=`c`.`id` WHERE  (  catid = 55 and (status = 1 or (status = 0 and createtime <1545543859)) and address_id=2 ) ORDER BY `sort` ASC,`createtime` DESC [ RunTime:0.000760s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000341s ] mysql:host=127.0.0.1;port=3306;dbname=jusha;charset=utf8
+[ sql ] [ SQL ] SELECT `template_list` FROM `clt_category` WHERE  `id` = 55 LIMIT 1 [ RunTime:0.000291s ]
+[ error ] [8]未定义数组下标: 0[/www/wwwroot/jusha/application/home/controller/Common.php:58]
+---------------------------------------------------------------
+[ 2018-12-23T13:44:44+08:00 ] 113.44.107.49 GET jusha.gitlay.com/admin
+[运行时间：0.021930s] [吞吐率：45.60req/s] [内存消耗：2,200.73kb] [文件加载：69]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/jusha/application/admin//lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2018-12-23T13:44:44+08:00 ] 113.44.107.49 GET jusha.gitlay.com/admin/login/index.html
+[运行时间：0.023160s] [吞吐率：43.18req/s] [内存消耗：2,340.26kb] [文件加载：73]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/jusha/application/admin//lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/admin/view/login/index.html [ array (
+  0 => 'system',
+) ]
+---------------------------------------------------------------
+[ 2018-12-23T13:48:02+08:00 ] 113.44.107.49 GET jusha.gitlay.com/admin/login/index.html
+[运行时间：0.019548s] [吞吐率：51.16req/s] [内存消耗：2,179.14kb] [文件加载：70]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/jusha/application/admin//lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/admin/view/login/index.html [ array (
+  0 => 'system',
+) ]
+---------------------------------------------------------------
+[ 2018-12-23T13:48:57+08:00 ] 113.44.107.49 GET jusha.gitlay.com/admin/login/index.html
+[运行时间：0.019642s] [吞吐率：50.91req/s] [内存消耗：2,179.14kb] [文件加载：70]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/jusha/application/admin//lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/admin/view/login/index.html [ array (
+  0 => 'system',
+) ]
+---------------------------------------------------------------
+[ 2018-12-23T13:49:46+08:00 ] 113.44.107.49 GET jusha.gitlay.com/admin/login/index.html
+[运行时间：0.019442s] [吞吐率：51.44req/s] [内存消耗：2,179.14kb] [文件加载：70]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/jusha/application/admin//lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/admin/view/login/index.html [ array (
+  0 => 'system',
+) ]
+---------------------------------------------------------------
+[ 2018-12-23T13:52:10+08:00 ] 113.44.107.49 GET jusha.gitlay.com/admin/login/index.html
+[运行时间：0.019733s] [吞吐率：50.68req/s] [内存消耗：2,179.14kb] [文件加载：70]
+[ info ] [ LANG ] /www/wwwroot/jusha/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/jusha/application/admin//lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=dqavshfbpstehvkh5fa90iak9p',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'jusha.gitlay.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] /www/wwwroot/jusha/application/admin/view/login/index.html [ array (
+  0 => 'system',
+) ]

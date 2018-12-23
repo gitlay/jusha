@@ -17,9 +17,9 @@ return [
     // 数据库名
     'database'        => 'jusha',
     // 用户名
-    'username'        => 'root',
+    'username'        => 'jusha',
     // 密码
-    'password'        => 'root',
+    'password'        => 'Gb5fbahimmnz2xeW',
     // 端口
     'hostport'        => '3306',
     // 连接dsn
