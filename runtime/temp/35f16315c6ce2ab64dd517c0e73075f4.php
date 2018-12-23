@@ -1,13 +1,14 @@
-<?php /*a:4:{s:60:"E:\phpStudy\WWW\jusha\application\home\view\index_index.html";i:1545493711;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_header.html";i:1545542721;s:59:"E:\phpStudy\WWW\jusha\application\home\view\common_nav.html";i:1545453445;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_footer.html";i:1545490685;}*/ ?>
+<?php /*a:4:{s:63:"E:\phpStudy\WWW\jusha\application\home\view\page_advantage.html";i:1545542215;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_header.html";i:1545497211;s:59:"E:\phpStudy\WWW\jusha\application\home\view\common_nav.html";i:1545453445;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_footer.html";i:1545490685;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
 	<title><?php echo isset($info['title']) ? htmlentities($info['title']) : ($title ? $title : $sys['title']); ?></title>
-	<meta name="keywords" content="<?php echo isset($info['keywords']) ? htmlentities($info['keywords']) : ($keywords ? $keywords : $sys['key']); ?>" />
-	<meta name="description" content="<?php echo isset($info['description']) ? htmlentities($info['description']) : ($description ? $description : $sys['des']); ?>" />
+	<meta name="keywords" content="<?php echo isset($info['keywords']) ? htmlentities($info['keywords']) : ($keywords ? $keywords : $sys['key']); ?>"/>
+	<meta name="description" content="<?php echo isset($info['description']) ? htmlentities($info['description']) : ($description ? $description : $sys['des']); ?>"/>
 	<link rel="stylesheet" type="text/css" href="/template/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/template/css/other.css">
 </head>
 <body>
 <div class="header">
@@ -22,7 +23,6 @@
             <div class="now-city">
                 <div class="city-name" id="chooseBtn" status="show">
                     <?php
-                    session('address_id')?:session('address_id',1);
                     $address_id = session('address_id');
 
                     echo $address[$address_id]['val'];
@@ -62,60 +62,58 @@
         </div>
     </div>
 </div>
-	<div class="container">
-		<div class="main-img">
-			<div class="img-box">
-				<img src="/template/img/web/main.png" alt="" class="mobile-main-img">
-				<img src="/template/img/web/pc-main.png" alt="" class="pc-main-img">
-			</div>
-			<div class="fixation">
-				<div class="list">
-					<div class="add-icon">
-						<div class="circle">
-							+
-						</div>
-					</div>
-					<div class="big-word">
-						体面
-					</div>
-					<div class="small-word">
-						做自己的老板 让每一滴血汗更加体面尊严
-					</div>
-				</div>
-				<div class="list">
-					<div class="add-icon">
-						<div class="circle">
-							+
-						</div>
-					</div>
-					<div class="big-word">
-						自由
-					</div>
-					<div class="small-word">
-						上班自由灵活 时间地点随你选告别传统打卡模式
-					</div>
-				</div>
-				<div class="list">
-					<div class="add-icon">
-						<div class="circle">
-							+
-						</div>
-					</div>
-					<div class="big-word">
-						责任
-					</div>
-					<div class="small-word">
-						我们的每一份努力 都是为城市出行做贡献 让出行更美好。
-					</div>
-				</div>
-			</div>
+<?php
+    $page = new app\services\PageService();
+    $info = $page->getPage(52);
+	$category = $page->getCategory(51,db('question'));
+?>
+	<div class="content">
+		<div class="banner">
+			<img src="<?php echo htmlentities($image); ?>" class="pc-banner">
+			<img src="<?php echo htmlentities($imageMobile); ?>" class="mb-banner">
 		</div>
-		<div class="button-list">
-			<div class="btn"><a href=""><span class="btn-span">无车加盟</span><span class="img"><img src="/template/img/web/right.png" alt=""></span></a></div>
-			<div class="btn"><a href=""><span class="btn-span">有车加盟</span><span class="img"><img src="/template/img/web/right.png" alt=""></span></a></div>
+		<div class="floor">
+			<div class="floor-title">
+				<?php echo htmlentities($category['catname']); ?><br>
+				<span><?php echo htmlentities($category['catdir']); ?></span>
+			</div>
+			<?php if(is_array($category['list']) || $category['list'] instanceof \think\Collection || $category['list'] instanceof \think\Paginator): $i = 0; $__LIST__ = $category['list'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+			<div <?php if($mod == '1'): ?>class="right"<?php else: ?>class="left"<?php endif; ?>>
+				<div class="fixation">
+					<div class="img">
+						<img src="<?php echo htmlentities($v['image']); ?>">
+					</div>
+					<div class="word">
+						<div class="big-number">
+							0<?php echo htmlentities($i); ?>
+						</div>
+						<div class="big-title">
+							<?php echo htmlentities($v['title']); ?><br>
+							<span><?php echo htmlentities($v['english']); ?></span>
+						</div>
+						<div class="text">
+							<?php echo $v['content']; ?>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php endforeach; endif; else: echo "" ;endif; ?>
+		</div>
+		<div class="driver">
+			<div class="floor-title">
+				<?php echo htmlentities($info['catname']); ?><br>
+				<span><?php echo htmlentities($info['catdir']); ?></span>
+			</div>
+			<div class="bg-img">
+				<img src="/template/img/web/bottom-banner2.png" class="mb-bottom">
+				<img src="/template/img/web/bottom-banner.png" class="pc-bottom">
+			</div>
+			<div class="word-box">
+				<?php echo $info['content']; ?>
+			</div>
 		</div>
 	</div>
-	<div class="footer">
+<div class="footer">
     <div class="mobile">
         <div class="qr-code">
             <div class="code-img">
@@ -191,3 +189,5 @@
 <script src="/template/js/main.js"></script>
 </body>
 </html>
+
+

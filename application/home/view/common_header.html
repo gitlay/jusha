@@ -10,6 +10,7 @@
             <div class="now-city">
                 <div class="city-name" id="chooseBtn" status="show">
                     <?php
+                    session('address_id')?:session('address_id',1);
                     $address_id = session('address_id');
 
                     echo $address[$address_id]['val'];

@@ -27,7 +27,7 @@
 				<span>{$category.catdir}</span>
 			</div>
 			{volist name="category['list']" id="v" moe="2"}
-			<div {eq name="mod" value="1"}class="left"{else/}class="right"{/eq}>
+			<div {eq name="mod" value="1"}class="right"{else/}class="left"{/eq}>
 				<div class="fixation">
 					<div class="img">
 						<img src="{$v.image}">

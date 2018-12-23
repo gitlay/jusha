@@ -1,4 +1,4 @@
-<?php /*a:3:{s:63:"E:\phpStudy\WWW\jusha\application\admin\view\system\system.html";i:1545467942;s:61:"E:\phpStudy\WWW\jusha\application\admin\view\common\head.html";i:1545055853;s:61:"E:\phpStudy\WWW\jusha\application\admin\view\common\foot.html";i:1545055853;}*/ ?>
+<?php /*a:3:{s:63:"E:\phpStudy\WWW\jusha\application\admin\view\system\system.html";i:1545543164;s:61:"E:\phpStudy\WWW\jusha\application\admin\view\common\head.html";i:1545055853;s:61:"E:\phpStudy\WWW\jusha\application\admin\view\common\foot.html";i:1545055853;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -116,37 +116,14 @@
                             <input type="text" name="copyright" placeholder="<?php echo lang('pleaseEnter'); ?>Copyright" class="layui-input">
                         </div>
                     </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label"><?php echo lang('companyAddress'); ?></label>
-                        <div class="layui-input-3">
-                            <input type="text" name="ads" placeholder="<?php echo lang('pleaseEnter'); ?><?php echo lang('companyAddress'); ?>" class="layui-input">
-                        </div>
-                    </div>
+
                     <div class="layui-form-item">
                         <label class="layui-form-label">客服电话</label>
                         <div class="layui-input-3">
                             <input type="text" name="tel" placeholder="<?php echo lang('pleaseEnter'); ?>客服电话" class="layui-input">
                         </div>
                     </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">投诉电话</label>
-                        <div class="layui-input-3">
-                            <input type="text" name="complain" placeholder="请输入投诉电话" class="layui-input">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">QQ</label>
-                        <div class="layui-input-3">
-                            <input type="text" name="complain" placeholder="请输入QQ" class="layui-input">
-                        </div>
-                    </div>
 
-                    <div class="layui-form-item">
-                        <label class="layui-form-label"><?php echo lang('email'); ?></label>
-                        <div class="layui-input-3">
-                            <input type="text" name="email" placeholder="<?php echo lang('pleaseEnter'); ?><?php echo lang('email'); ?>" class="layui-input">
-                        </div>
-                    </div>
                     <div class="layui-form-item">
                         <div class="layui-input-block">
                             <button type="button" class="layui-btn" lay-submit="" lay-filter="sys"><?php echo lang('submit'); ?></button>
@@ -186,13 +163,13 @@
             </div>
             <div class="layui-tab-item">
                 <form class="layui-form layui-form-pane" lay-filter="form-system">
-                    <div class="layui-form-item">
+                   <!-- <div class="layui-form-item">
                         <label class="layui-form-label">手机端</label>
                         <div class="layui-input-block">
                             <input type="radio" name="mobile" value="open" title="开启">
                             <input type="radio" name="mobile" value="close" title="关闭">
                         </div>
-                    </div>
+                    </div>-->
                     <div class="layui-form-item">
                         <label class="layui-form-label">验证码</label>
                         <div class="layui-input-block">

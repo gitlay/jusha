@@ -93,7 +93,10 @@
 {include file="common/footer"/}
 
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=56srZYI3vAB9XzW2B0u544hHhsdWdE7X"></script>
-
+<?php
+    $address_id = session('address_id')?session('address_id'):1;
+    $index = $address_id-1;
+?>
 <script type="text/javascript">
     //创建和初始化地图函数：
     function initMap(lon,lat,obj){
@@ -153,7 +156,8 @@
     }
     var map;
     $(function () {
-        $('.address span:first').click();
+
+        $('.address span:eq({$index})').click();
     })
 
 </script>
