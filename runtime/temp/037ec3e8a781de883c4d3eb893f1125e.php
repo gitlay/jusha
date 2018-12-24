@@ -1,4 +1,4 @@
-<?php /*a:4:{s:63:"E:\phpStudy\WWW\jusha\application\home\view\page_advantage.html";i:1545542215;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_header.html";i:1545497211;s:59:"E:\phpStudy\WWW\jusha\application\home\view\common_nav.html";i:1545453445;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_footer.html";i:1545490685;}*/ ?>
+<?php /*a:4:{s:58:"/www/wwwroot/jusha/application/home/view/page_dynamic.html";i:1545543491;s:59:"/www/wwwroot/jusha/application/home/view/common_header.html";i:1545543491;s:56:"/www/wwwroot/jusha/application/home/view/common_nav.html";i:1545543491;s:59:"/www/wwwroot/jusha/application/home/view/common_footer.html";i:1545543491;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +23,7 @@
             <div class="now-city">
                 <div class="city-name" id="chooseBtn" status="show">
                     <?php
+                    session('address_id')?:session('address_id',1);
                     $address_id = session('address_id');
 
                     echo $address[$address_id]['val'];
@@ -62,54 +63,27 @@
         </div>
     </div>
 </div>
-<?php
-    $page = new app\services\PageService();
-    $info = $page->getPage(52);
-	$category = $page->getCategory(51,db('question'));
-?>
 	<div class="content">
 		<div class="banner">
 			<img src="<?php echo htmlentities($image); ?>" class="pc-banner">
 			<img src="<?php echo htmlentities($imageMobile); ?>" class="mb-banner">
 		</div>
 		<div class="floor">
-			<div class="floor-title">
-				<?php echo htmlentities($category['catname']); ?><br>
-				<span><?php echo htmlentities($category['catdir']); ?></span>
-			</div>
-			<?php if(is_array($category['list']) || $category['list'] instanceof \think\Collection || $category['list'] instanceof \think\Paginator): $i = 0; $__LIST__ = $category['list'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-			<div <?php if($mod == '1'): ?>class="right"<?php else: ?>class="left"<?php endif; ?>>
+			<div class="tab-nav">
 				<div class="fixation">
-					<div class="img">
-						<img src="<?php echo htmlentities($v['image']); ?>">
-					</div>
-					<div class="word">
-						<div class="big-number">
-							0<?php echo htmlentities($i); ?>
-						</div>
-						<div class="big-title">
-							<?php echo htmlentities($v['title']); ?><br>
-							<span><?php echo htmlentities($v['english']); ?></span>
-						</div>
-						<div class="text">
-							<?php echo $v['content']; ?>
-						</div>
-					</div>
+					<?php if(is_array($child) || $child instanceof \think\Collection || $child instanceof \think\Paginator): $i = 0; $__LIST__ = $child;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+					<div class="tab-nav-item" <?php if($i == '1'): ?> id="selected"<?php endif; ?>><?php echo htmlentities($v['catname']); ?></div>
+					<?php endforeach; endif; else: echo "" ;endif; ?>
 				</div>
 			</div>
-			<?php endforeach; endif; else: echo "" ;endif; ?>
-		</div>
-		<div class="driver">
-			<div class="floor-title">
-				<?php echo htmlentities($info['catname']); ?><br>
-				<span><?php echo htmlentities($info['catdir']); ?></span>
-			</div>
-			<div class="bg-img">
-				<img src="/template/img/web/bottom-banner2.png" class="mb-bottom">
-				<img src="/template/img/web/bottom-banner.png" class="pc-bottom">
-			</div>
-			<div class="word-box">
-				<?php echo $info['content']; ?>
+			<div class="window">
+				<?php
+				$page = new app\services\PageService();
+				if(is_array($child) || $child instanceof \think\Collection || $child instanceof \think\Paginator): $i = 0; $__LIST__ = $child;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;$info = $page->getPage($v['id']);?>
+				<div class="window-item" <?php if($i == '1'): ?>id="item-selected"<?php endif; ?>>
+						<?php echo $info['content']; ?>
+				</div>
+				<?php endforeach; endif; else: echo "" ;endif; ?>
 			</div>
 		</div>
 	</div>
@@ -189,5 +163,3 @@
 <script src="/template/js/main.js"></script>
 </body>
 </html>
-
-

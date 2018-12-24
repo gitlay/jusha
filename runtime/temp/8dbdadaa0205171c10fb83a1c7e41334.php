@@ -1,4 +1,4 @@
-<?php /*a:1:{s:55:"/www/wwwroot/jusha/application/home/view/cars_list.html";i:1545543491;}*/ ?>
+<?php /*a:1:{s:55:"/www/wwwroot/jusha/application/home/view/cars_list.html";i:1545545129;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -686,6 +686,12 @@
                     this.introShow = false
                     this.paramShow = false
                     this.yunyingShow = true
+                }
+              else if(i==3){
+                    this.introShow = false
+                    this.paramShow = false
+                    this.yunyingShow = false
+                window.location.href="/home/join/index/catId/53.html";
                 }
 
             },

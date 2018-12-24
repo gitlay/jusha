@@ -1,4 +1,4 @@
-<?php /*a:4:{s:58:"/www/wwwroot/jusha/application/home/view/page_contact.html";i:1545543491;s:59:"/www/wwwroot/jusha/application/home/view/common_header.html";i:1545543491;s:56:"/www/wwwroot/jusha/application/home/view/common_nav.html";i:1545543491;s:59:"/www/wwwroot/jusha/application/home/view/common_footer.html";i:1545543491;}*/ ?>
+<?php /*a:4:{s:58:"/www/wwwroot/jusha/application/home/view/page_contact.html";i:1545543491;s:59:"/www/wwwroot/jusha/application/home/view/common_header.html";i:1545543491;s:56:"/www/wwwroot/jusha/application/home/view/common_nav.html";i:1545543491;s:59:"/www/wwwroot/jusha/application/home/view/common_footer.html";i:1545544939;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -153,8 +153,9 @@
             </div>
         </div>
         <div class="copyright">
-            © 2005-2011,WWW.XXXXXX.COM巨鲨汽车网站<br>
-            版权所有 沪ICP备XXXXXX号
+          
+           <?php echo htmlentities($sys['copyright']); ?><br>
+            版权所有    <?php echo htmlentities($sys['bah']); ?>
         </div>
     </div>
     <div class="pc-web">

@@ -1,14 +1,18 @@
-<?php /*a:4:{s:60:"E:\phpStudy\WWW\jusha\application\home\view\index_index.html";i:1545493711;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_header.html";i:1545542721;s:59:"E:\phpStudy\WWW\jusha\application\home\view\common_nav.html";i:1545453445;s:62:"E:\phpStudy\WWW\jusha\application\home\view\common_footer.html";i:1545490685;}*/ ?>
+<?php /*a:4:{s:55:"/www/wwwroot/jusha/application/home/view/page_show.html";i:1545543491;s:59:"/www/wwwroot/jusha/application/home/view/common_header.html";i:1545543491;s:56:"/www/wwwroot/jusha/application/home/view/common_nav.html";i:1545543491;s:59:"/www/wwwroot/jusha/application/home/view/common_footer.html";i:1545544939;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
-	<title><?php echo isset($info['title']) ? htmlentities($info['title']) : ($title ? $title : $sys['title']); ?></title>
-	<meta name="keywords" content="<?php echo isset($info['keywords']) ? htmlentities($info['keywords']) : ($keywords ? $keywords : $sys['key']); ?>" />
-	<meta name="description" content="<?php echo isset($info['description']) ? htmlentities($info['description']) : ($description ? $description : $sys['des']); ?>" />
-	<link rel="stylesheet" type="text/css" href="/template/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title><?php echo isset($info['title']) ? htmlentities($info['title']) : ($title ? $title : $sys['title']); ?></title>
+    <meta name="keywords" content="<?php echo isset($info['keywords']) ? htmlentities($info['keywords']) : ($keywords ? $keywords : $sys['key']); ?>"/>
+    <meta name="description" content="<?php echo isset($info['description']) ? htmlentities($info['description']) : ($description ? $description : $sys['des']); ?>"/>
+    <link rel="stylesheet" type="text/css" href="/template/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/template/css/other.css">
+    <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=YLBBZ-4RYKO-5JGWR-SEJDQ-M5DPF-KRFUP"></script>
 </head>
+
 <body>
 <div class="header">
     <div class="fixation">
@@ -62,60 +66,51 @@
         </div>
     </div>
 </div>
-	<div class="container">
-		<div class="main-img">
-			<div class="img-box">
-				<img src="/template/img/web/main.png" alt="" class="mobile-main-img">
-				<img src="/template/img/web/pc-main.png" alt="" class="pc-main-img">
-			</div>
-			<div class="fixation">
-				<div class="list">
-					<div class="add-icon">
-						<div class="circle">
-							+
-						</div>
-					</div>
-					<div class="big-word">
-						体面
-					</div>
-					<div class="small-word">
-						做自己的老板 让每一滴血汗更加体面尊严
-					</div>
-				</div>
-				<div class="list">
-					<div class="add-icon">
-						<div class="circle">
-							+
-						</div>
-					</div>
-					<div class="big-word">
-						自由
-					</div>
-					<div class="small-word">
-						上班自由灵活 时间地点随你选告别传统打卡模式
-					</div>
-				</div>
-				<div class="list">
-					<div class="add-icon">
-						<div class="circle">
-							+
-						</div>
-					</div>
-					<div class="big-word">
-						责任
-					</div>
-					<div class="small-word">
-						我们的每一份努力 都是为城市出行做贡献 让出行更美好。
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="button-list">
-			<div class="btn"><a href=""><span class="btn-span">无车加盟</span><span class="img"><img src="/template/img/web/right.png" alt=""></span></a></div>
-			<div class="btn"><a href=""><span class="btn-span">有车加盟</span><span class="img"><img src="/template/img/web/right.png" alt=""></span></a></div>
-		</div>
-	</div>
-	<div class="footer">
+<?php
+    $page = new app\services\PageService();
+    $info = $page->getPage(44);
+     $category = $page->getCategory(45,db('picture'));
+?>
+<div class="content">
+    <div class="banner">
+        <img src="<?php echo htmlentities($info['image']); ?>" class="pc-banner">
+        <img src="<?php echo htmlentities($info['imageMobile']); ?>" class="mb-banner">
+    </div>
+    <div class="floor">
+        <div class="floor-title">
+
+            <?php echo htmlentities($info['catname']); ?><br>
+            <span><?php echo htmlentities($info['catdir']); ?></span>
+        </div>
+        <div class="brief">
+            <?php echo $info['content']; ?>
+        </div>
+        <div class="slider">
+            <div class="back-img">
+                <img src="<?php echo htmlentities($category['image']); ?>" class="pc-web">
+                <img src="<?php echo htmlentities($category['imageMobile']); ?>" class="mb-web">
+            </div>
+            <div class="slide-box">
+                <div class="slide-wrapper" id="slide-wrapper">
+                    <?php
+                    $array=['','left','midd','right'];
+                    if(is_array($category['list']) || $category['list'] instanceof \think\Collection || $category['list'] instanceof \think\Paginator): $i = 0; $__LIST__ = $category['list'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+                    <div class="slide-item" id="<?php echo htmlentities($array[$i]); ?>">
+                        <img src="<?php echo htmlentities($v['pic']); ?>">
+                    </div>
+                   <?php endforeach; endif; else: echo "" ;endif; ?>
+                </div>
+                <div class="prev">
+                    <
+                </div>
+                <div class="next">
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
     <div class="mobile">
         <div class="qr-code">
             <div class="code-img">
@@ -126,8 +121,9 @@
             </div>
         </div>
         <div class="copyright">
-            © 2005-2011,WWW.XXXXXX.COM巨鲨汽车网站<br>
-            版权所有 沪ICP备XXXXXX号
+          
+           <?php echo htmlentities($sys['copyright']); ?><br>
+            版权所有    <?php echo htmlentities($sys['bah']); ?>
         </div>
     </div>
     <div class="pc-web">

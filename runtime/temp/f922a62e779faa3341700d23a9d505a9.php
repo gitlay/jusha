@@ -1,4 +1,4 @@
-<?php /*a:3:{s:63:"E:\phpStudy\WWW\jusha\application\admin\view\system\system.html";i:1545543164;s:61:"E:\phpStudy\WWW\jusha\application\admin\view\common\head.html";i:1545055853;s:61:"E:\phpStudy\WWW\jusha\application\admin\view\common\foot.html";i:1545055853;}*/ ?>
+<?php /*a:3:{s:60:"/www/wwwroot/jusha/application/admin/view/system/system.html";i:1545543491;s:58:"/www/wwwroot/jusha/application/admin/view/common/head.html";i:1545543491;s:58:"/www/wwwroot/jusha/application/admin/view/common/foot.html";i:1545543491;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
