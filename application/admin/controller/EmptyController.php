@@ -250,6 +250,15 @@ class EmptyController extends Common{
         if(isset($fields['updatetime'])  && !isset($data['updatetime']) ) {
             $data['updatetime'] = time();
         }
+
+
+        if(isset($fields['content'])  && !isset($data['content']) ){
+            $data['content'] =  ' ';
+        }
+        if(isset($fields['description'])  && !isset($data['description']) ){
+            $data['description'] = ' ';
+        }
+
         if($controllerName!='Page') {
             if (isset($fields['updatetime'])){
                 $data['updatetime'] = $data['createtime'];

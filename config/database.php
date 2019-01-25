@@ -15,11 +15,11 @@ return [
     // 服务器地址
     'hostname'        => '127.0.0.1',
     // 数据库名
-    'database'        => 'jusha',
+    'database'        => 'jusha_new_gitlay',
     // 用户名
-    'username'        => 'jusha',
+    'username'        => 'jusha_new_gitlay',
     // 密码
-    'password'        => 'Gb5fbahimmnz2xeW',
+    'password'        => 'sw4jNsn6xYMeezWp',
     // 端口
     'hostport'        => '3306',
     // 连接dsn

@@ -436,6 +436,24 @@ class Form{
         return $this->$fun($newinfo,$value);
     }
 
+    public function contact($info,$value){
+        $newinfo = $info;
+        $info['setup']=is_array($info['setup']) ? $info['setup'] : string2array($info['setup']);
+        $list = db('address')->select();;
+        foreach ($list as $lk=>$v){
+            $groups[$v['id']] = $v;
+        }
+        $options=array();
+        foreach($groups as $key=>$r) {
+            if($r['status']){
+                $options[$key]=$r['title'];
+            }
+        }
+        $newinfo['options']=$options;
+        $fun=$info['setup']['inputtype'];
+        return $this->$fun($newinfo,$value);
+    }
+
     public function posid($info,$value){
         $newinfo = $info;
         $list = db('posid')->select();

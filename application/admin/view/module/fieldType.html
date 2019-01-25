@@ -17,6 +17,7 @@
 	</tr>
 </table>
 {/case}
+
 {case value="text" }
 <table cellpadding="2" cellspacing="1" width="100%">
 	<tr>
@@ -113,6 +114,36 @@
 
 {/case}
 {case value="groupid"}
+<table cellpadding="2" cellspacing="1" width="100%">
+	<tr>
+		<td width="120">选项类型</td>
+		<td>
+			<input type="radio" name="setup[inputtype]" value="checkbox" {if condition="$inputtype=='checkbox'"} checked{/if} title="复选框">
+			<input type="radio" name="setup[inputtype]" value="select" {if condition="$inputtype=='select'"} checked{/if} title="下拉列表框">
+			<input type="radio" name="setup[inputtype]" value="radio" {if condition="$inputtype=='radio'"} checked{/if} title="单选框">
+		</td>
+	</tr>
+	<tr>
+		<td>字段类型</td>
+		<td>
+			<select name="setup[fieldtype]"  onchange="javascript:numbertype(this.value);">
+				<option value="varchar" <?php if($fieldtype=='varchar') echo 'selected';?>>字符 VARCHAR</option>
+				<option value="tinyint" <?php if($fieldtype=='tinyint') echo 'selected';?>>整数 TINYINT(3)</option>
+			</select>
+			<span style="display:none;">
+				<input type="checkbox" name = "setup[numbertype]" value="1" checked title="不包括负数" />
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td>默认值</td>
+		<td>
+			<input type="text" class="input-text layui-input" size="5"  name="setup[default]" value="{$default}" />
+		</td>
+	</tr>
+</table>
+{/case}
+{case value="contact"}
 <table cellpadding="2" cellspacing="1" width="100%">
 	<tr>
 		<td width="120">选项类型</td>
