@@ -16,16 +16,8 @@ class Common extends Controller
         $sys = cache('System');
         $this->assign('sys', $sys);
 
-        $setup = db('field')->where('id',240)->value('setup');
-        $setup=is_array($setup) ? $setup: string2array($setup);
-        $options = explode("\n",$setup['options']);
-        foreach($options as $r) {
-            $v = explode("|",$r);
-            $k = trim($v[1]);
-            $optionsarr[$k]['val'] = $v[0];
-            $optionsarr[$k]['key'] = $k;
-        }
-        $this->assign('address',$optionsarr);
+        $list = db('address')->select();
+        $this->assign('address',$list);
 
         if ($sys['mobile'] == 'open') {
             if (isMobile()) {

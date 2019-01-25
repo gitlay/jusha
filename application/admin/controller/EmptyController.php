@@ -61,6 +61,8 @@ class EmptyController extends Common{
                 $lists[$k]['catdir'] =  $cinfo['catdir'];
                 $lists[$k]['is_show'] =  $cinfo['is_show'];
                 $lists[$k]['url'] = url('home/'.$cinfo['catdir'].'/info',['id'=>$v['id'],'catId'=>$v['catid']]);
+                $address =  db('address')->where('id',$v['address_id'])->value('title');
+                $lists[$k]['address'] = $address?$address:'全部';
             }
             $rsult['data'] = $lists;
             $rsult['count'] = $list['total'];
@@ -239,6 +241,8 @@ class EmptyController extends Common{
         $request = Request::instance();
         $controllerName = $request->controller();
         $model = $this->dao;
+
+
         $fields = $this->fields;
         $data = $this->checkfield($fields,Request::except('file'));
         if(isset($data['code']) && $data['code']==0){

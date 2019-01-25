@@ -22,4 +22,21 @@ class PageService{
         $category['list'] = $model->where($map)->order('sort asc,createtime desc')->select();
         return  $category;
     }
+    public function getOne($cat_id){
+        $arrchildid = db('category')->where(['id' => $cat_id])->value('arrchildid');
+        $map = ' ';
+        if ($arrchildid != input('catId')) {
+            $map .= "article.catid in ($arrchildid)";
+        } else {
+            $map .= 'article.catid = ' . input("catId");
+        }
+        $map .= ' and article.address_id = ' . session('address_id');
+
+
+        $map .=' and article.status = 1 or (article.status = 0 and article.createtime <'.time().')';
+       return  Db::name('article')->leftJoin('clt_category cat','cat.id=article.catid')
+           ->where($map)->field('article.*,cat.catname,cat.image,cat.imageMobile,cat.catdir')  ->find();
+
+
+    }
 }

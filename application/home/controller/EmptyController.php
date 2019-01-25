@@ -16,24 +16,44 @@ class EmptyController extends Common
 
     public function index()
     {
-        $time = time();
+
+
         if (DBNAME == 'page') {
-            $info = Db::name(DBNAME)->where(['id' => input('catId')])->find();
+
+            $arrchildid = db('category')->where(['id' => input('catId')])->value('arrchildid');
+            $map = ' ';
+            if ($arrchildid != input('catId')) {
+                $map .= "page.id in ($arrchildid)";
+            } else {
+                $map .= 'page.id = ' . input("catId");
+            }
+
+
+
+            $info =  Db::name('page')->alias('page')->leftJoin('clt_category cat','cat.id=page.id')
+                ->where('page.status = 1 or (page.status = 0 and page.createtime <'.time().')')
+                ->where($map)->field('page.*,cat.catname,cat.image,cat.imageMobile,cat.catdir')->find();
+
+            $map = 'catid = 45';
+            $map .= ' and (status = 1 or (status = 0 and createtime <'.time().'))';
+
+
             $this->assign('info', $info);
+
             if ($info['template']) {
                 $template = $info['template'];
             } else {
                 $info['template'] = Db::name('category')->where(['id' => $info['id']])->value('template_show');
-                if ($info['template']) {
+                   if ($info['template']) {
                     $template = $info['template'];
                 } else {
                     $template = DBNAME . '_show';
                 }
             }
+
             return $this->fetch($template);
         } else {
             if (DBNAME == 'picture') {
-
                 $setup = Db::name('field')->where([['moduleid', 'eq', 3], ['field', 'eq', 'group']])->value('setup');
                 $setup = is_array($setup) ? $setup : string2array($setup);
                 $options = explode("\n", $setup['options']);
@@ -75,7 +95,6 @@ class EmptyController extends Common
                         }
                     }
                 }
-
                 $this->assign('cars',$list);
 
 

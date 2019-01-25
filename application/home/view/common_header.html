@@ -10,10 +10,9 @@
             <div class="now-city">
                 <div class="city-name" id="chooseBtn" status="show">
                     <?php
-                    session('address_id')?:session('address_id',1);
-                    $address_id = session('address_id');
+                    session('address_id')?:session('address_id',$address[0]['id']);
 
-                    echo $address[$address_id]['val'];
+                    echo session('address_name')?session('address_name'):$address[0]['title'];
                     ?>
 
                 </div>
@@ -23,7 +22,7 @@
             </div>
             <div class="city-choose" id="city-choose">
                 {volist name="address" id="v"}
-                <li class="city-list" id="{$v.key}" onclick="setConfig(this)">{$v.val}</li>
+                <li class="city-list" id="{$v.id}" onclick="setConfig(this)">{$v.title}</li>
                 {/volist}
             </div>
             <script>

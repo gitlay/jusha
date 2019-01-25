@@ -15,9 +15,10 @@
 <body>
 {include file="common/header"/}
 <?php
-    $page = new app\services\PageService();
-    $info = $page->getPage(44);
-     $category = $page->getCategory(45,db('picture'));
+     $page = new app\services\PageService();
+     $info = $page->getOne(57);
+
+     $picture = $page->getCategory(45,db('picture'));
 ?>
 <div class="content">
     <div class="banner">
@@ -33,41 +34,18 @@
         <div class="brief">
             {$info.content|raw}
         </div>
-<!--         <div class="slider">
-            <div class="back-img">
-                <img src="{$category.image}" class="pc-web">
-                <img src="{$category.imageMobile}" class="mb-web">
-            </div>
-            <div class="slide-box">
-                <div class="slide-wrapper" id="slide-wrapper">
-                    <?php
-                    $array=['','left','midd','right'];
-                    ?>
-                    {volist name="category['list']" id="v"}
-                    <div class="slide-item" id="{$array[$i]}">
-                        <img src="{$v.pic}">
-                    </div>
-                   {/volist}
-                </div>
-                <div class="prev">
-                    <
-                </div>
-                <div class="next">
-                    >
-                </div>
-            </div>
-        </div> -->
+
             <div class="slider">
                 <div class="back-img">
-                    <img src="{$category.image}" class="pc-web">
-                    <img src="{$category.imageMobile}" class="mb-web">
+                    <img src="{$picture.image}" class="pc-web">
+                    <img src="{$picture.imageMobile}" class="mb-web">
                 </div>
                 <div class="slide-box">
                     <div class="slide-wrapper" id="slide-wrapper">
                         <?php
                     $array=['','left','midd','right'];
                     ?>
-                    {volist name="category['list']" id="v"}
+                    {volist name="picture['list']" id="v"}
                         <div class="slide-item prevImg" id="{$array[$i]}">
                             <img src="{$v.pic}">
                         </div>

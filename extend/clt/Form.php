@@ -439,7 +439,7 @@ class Form{
     public function contact($info,$value){
         $newinfo = $info;
         $info['setup']=is_array($info['setup']) ? $info['setup'] : string2array($info['setup']);
-        $list = db('address')->select();;
+        $list = db('address')->select();
         foreach ($list as $lk=>$v){
             $groups[$v['id']] = $v;
         }
