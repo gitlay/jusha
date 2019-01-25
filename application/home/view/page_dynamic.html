@@ -25,6 +25,7 @@
 				</div>
 			</div>
 			<div class="window">
+
 				<?php
 				$page = new app\services\PageService();
 				?>
@@ -38,3 +39,14 @@
 		</div>
 	</div>
 {include file="common/footer"/}
+<script>
+    console.log(window.location.hash);
+    var param = window.location.hash;
+    $('.tab-nav-item').removeAttr('id');
+    switch (param) {
+        case '#a':$('.tab-nav-item:eq(0)').attr('id','selected');break;
+		case '#b':$('.tab-nav-item:eq(1)').attr('id','selected');break;
+        case '#c':$('.tab-nav-item:eq(2)').attr('id','selected');break;
+		default:$('.tab-nav-item:eq(0)').attr('id','selected');break;
+    }
+</script>

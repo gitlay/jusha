@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>{$info['title']??($title ? $title : $sys.title)}</title>
+    <meta name="keywords" content="{$info['keywords']??($keywords ? $keywords : $sys.key)}"/>
+    <meta name="description" content="{$info['description']??($description ? $description : $sys.des)}"/>
+    <link rel="stylesheet" type="text/css" href="/template/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/template/css/other.css">
+    <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=YLBBZ-4RYKO-5JGWR-SEJDQ-M5DPF-KRFUP"></script>
+</head>
+
+<body>
+{include file="common/header"/}
+<?php
+    $page = new app\services\PageService();
+    $info = $page->getPage(44);
+     $category = $page->getCategory(45,db('picture'));
+?>
+<div class="content">
+    <div class="banner">
+        <img src="{$info.image}" class="pc-banner">
+        <img src="{$info.imageMobile}" class="mb-banner">
+    </div>
+    <div class="floor">
+        <div class="floor-title">
+
+            {$info.catname}<br>
+            <span>{$info.catdir}</span>
+        </div>
+        <div class="brief">
+            {$info.content|raw}
+        </div>
+        <div class="slider">
+            <div class="back-img">
+                <img src="{$category.image}" class="pc-web">
+                <img src="{$category.imageMobile}" class="mb-web">
+            </div>
+            <div class="slide-box">
+                <div class="slide-wrapper" id="slide-wrapper">
+                    <?php
+                    $array=['','left','midd','right'];
+                    ?>
+                    {volist name="category['list']" id="v"}
+                    <div class="slide-item" id="{$array[$i]}">
+                        <img src="{$v.pic}">
+                    </div>
+                   {/volist}
+                </div>
+                <div class="prev">
+                    <
+                </div>
+                <div class="next">
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="common/footer"/}

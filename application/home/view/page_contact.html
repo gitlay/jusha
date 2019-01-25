@@ -62,7 +62,7 @@
             ?>
             <div class="address">
                 {volist name="category['list']" id="v"}
-                <span lon="{$v.lon}" lat="{$v.lat}" onclick="  initMap({$v.lon},{$v.lat},this)">{$v.address}</span><br>
+                <span lon="{$v.lon}" id="address_{$v.id}" lat="{$v.lat}" onclick="  initMap({$v.lon},{$v.lat},this)">{$v.address}</span><br>
                 {/volist}
             </div>
         </div>
@@ -157,7 +157,7 @@
     var map;
     $(function () {
 
-        $('.address span:eq({$index})').click();
+        $('#address_{:session("address_id")}').click();
     })
 
 </script>

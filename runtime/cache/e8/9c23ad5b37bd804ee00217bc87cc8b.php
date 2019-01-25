@@ -9,9 +9,10 @@ think_serialize:a:42:{s:5:"catid";a:18:{s:2:"id";i:202;s:8:"moduleid";i:27;s:5:"
   'default' => '',
   'ispassword' => '0',
   'fieldtype' => 'varchar',
-)";s:6:"ispost";i:1;s:11:"unpostgroup";s:0:"";s:4:"sort";i:3;s:6:"status";i:0;s:8:"issystem";i:1;}s:10:"address_id";a:18:{s:2:"id";i:240;s:8:"moduleid";i:27;s:5:"field";s:10:"address_id";s:4:"name";s:6:"地区";s:4:"tips";s:0:"";s:8:"required";i:1;s:9:"minlength";i:0;s:9:"maxlength";i:0;s:7:"pattern";s:6:"defaul";s:8:"errormsg";s:0:"";s:5:"class";s:10:"address_id";s:4:"type";s:5:"radio";s:5:"setup";s:119:"array (
+)";s:6:"ispost";i:1;s:11:"unpostgroup";s:0:"";s:4:"sort";i:3;s:6:"status";i:0;s:8:"issystem";i:1;}s:10:"address_id";a:18:{s:2:"id";i:240;s:8:"moduleid";i:27;s:5:"field";s:10:"address_id";s:4:"name";s:6:"地区";s:4:"tips";s:0:"";s:8:"required";i:1;s:9:"minlength";i:0;s:9:"maxlength";i:0;s:7:"pattern";s:6:"defaul";s:8:"errormsg";s:0:"";s:5:"class";s:10:"address_id";s:4:"type";s:5:"radio";s:5:"setup";s:128:"array (
   'options' => '石家庄|1
-保定|2',
+保定|2
+沧州|3',
   'fieldtype' => 'varchar',
   'numbertype' => '1',
   'default' => '1',

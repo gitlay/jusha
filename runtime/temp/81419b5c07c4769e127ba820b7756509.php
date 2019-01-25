@@ -1,4 +1,4 @@
-<?php /*a:4:{s:55:"/www/wwwroot/jusha/application/home/view/page_show.html";i:1545543491;s:59:"/www/wwwroot/jusha/application/home/view/common_header.html";i:1545543491;s:56:"/www/wwwroot/jusha/application/home/view/common_nav.html";i:1545543491;s:59:"/www/wwwroot/jusha/application/home/view/common_footer.html";i:1545544939;}*/ ?>
+<?php /*a:4:{s:55:"/www/wwwroot/jusha/application/home/view/page_show.html";i:1547031663;s:59:"/www/wwwroot/jusha/application/home/view/common_header.html";i:1547447708;s:56:"/www/wwwroot/jusha/application/home/view/common_nav.html";i:1545543491;s:59:"/www/wwwroot/jusha/application/home/view/common_footer.html";i:1548127836;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +17,7 @@
 <div class="header">
     <div class="fixation">
         <div class="logo">
-            <a href=""><img src="<?php echo htmlentities($sys['logo']); ?>" alt=""></a>
+            <a href="/"><img src="<?php echo htmlentities($sys['logo']); ?>" alt=""></a>
         </div>
         <div class="name">
             <?php echo htmlentities($sys['company']); ?>
@@ -85,7 +85,7 @@
         <div class="brief">
             <?php echo $info['content']; ?>
         </div>
-        <div class="slider">
+<!--         <div class="slider">
             <div class="back-img">
                 <img src="<?php echo htmlentities($category['image']); ?>" class="pc-web">
                 <img src="<?php echo htmlentities($category['imageMobile']); ?>" class="mb-web">
@@ -107,7 +107,36 @@
                     >
                 </div>
             </div>
-        </div>
+        </div> -->
+            <div class="slider">
+                <div class="back-img">
+                    <img src="<?php echo htmlentities($category['image']); ?>" class="pc-web">
+                    <img src="<?php echo htmlentities($category['imageMobile']); ?>" class="mb-web">
+                </div>
+                <div class="slide-box">
+                    <div class="slide-wrapper" id="slide-wrapper">
+                        <?php
+                    $array=['','left','midd','right'];
+                    if(is_array($category['list']) || $category['list'] instanceof \think\Collection || $category['list'] instanceof \think\Paginator): $i = 0; $__LIST__ = $category['list'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
+                        <div class="slide-item prevImg" id="<?php echo htmlentities($array[$i]); ?>">
+                            <img src="<?php echo htmlentities($v['pic']); ?>">
+                        </div>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                      <!--   <div class="slide-item" id="midd">
+                            <img src="img/web/about3.jpg">
+                        </div>
+                        <div class="slide-item nextImg" id="right">
+                            <img src="img/web/about4.jpg">
+                        </div> -->
+                    </div>
+                    <div class="prev">
+                        <
+                    </div>
+                    <div class="next" status="1">
+                        >
+                    </div>
+                </div>  
+            </div>
     </div>
 </div>
 <div class="footer">
@@ -121,52 +150,68 @@
             </div>
         </div>
         <div class="copyright">
-          
+
            <?php echo htmlentities($sys['copyright']); ?><br>
             版权所有    <?php echo htmlentities($sys['bah']); ?>
         </div>
     </div>
+    <style>
+        .link-list a{
+            color: #000;
+        }
+    </style>
     <div class="pc-web">
         <div class="fixation">
             <div class="top">
                 <div class="left">
-                    <img src="<?php echo htmlentities($sys['logoa']); ?>">
+                    <img src="<?php echo htmlentities($sys['logoa']); ?>" onclick="bottom_logo()" style="cursor:pointer">
                 </div>
+              <script>
+            		function bottom_logo(){
+                        window.location.href="/";
+                    }
+                
+              </script>
                 <div class="mid">
-                    <div class="link-list">
-                        <div class="title">公司简介</div>
-                        <div class="list-box">
-                            <li><a href="">车型展示</a></li>
-                            <li><a href="">车辆细节</a></li>
-                            <li><a href="">车辆参数</a></li>
-                            <li><a href="">运营分析</a></li>
-                        </div>
+                  <div class="link-list">
+                    <div class="title"><a href="/about-2.html">公司简介</a></div>
+                    <div class="list-box">
+
                     </div>
-                    <div class="link-list">
-                        <div class="title">行业动态</div>
-                        <div class="list-box">
-                            <li><a href="">政策</a></li>
-                            <li><a href="">证照相关</a></li>
-                            <li><a href="">合规公司优势</a></li>
-                        </div>
+                  </div>
+                  <div class="link-list">
+                    <div class="title"><a href="/home/trade/index/catId/46.html#a">行业动态</a></div>
+                    <div class="list-box">
+                      <li><a href="/home/trade/index/catId/46.html#a">政策</a></li>
+                      <li><a href="/home/trade/index/catId/46.html#b">证照相关</a></li>
+                      <li><a href="/home/trade/index/catId/46.html#c">合规公司优势</a></li>
                     </div>
-                    <div class="link-list">
-                        <div class="title">公司优势</div>
-                        <div class="list-box">
-                            <li><a href="">岗前培训</a></li>
-                            <li><a href="">运营分析</a></li>
-                            <li><a href="">专人对接</a></li>
-                            <li><a href="">车辆保证</a></li>
-                        </div>
+                  </div>
+                  <div class="link-list">
+                    <div class="title"><a href="/home/car/index/catId/55.html">车型展示</a></div>
+                    <div class="list-box">
+                      <li><a href="/home/car/index/catId/55.html">车型展示</a></li>
+                      <li><a href="/home/car/index/catId/55.html">车辆细节</a></li>
+                      <li><a href="/home/car/index/catId/55.html">车辆参数</a></li>
                     </div>
-                    <div class="link-list">
-                        <div class="title">加入我们</div>
-                        <div class="list-box">
-                            <li><a href="">报名入口</a></li>
-                            <li><a href="">公司地址</a></li>
-                            <li><a href="">联系方式</a></li>
-                        </div>
+                  </div>
+                  <div class="link-list">
+                    <div class="title"><a href="/home/goodness/index/catId/50.html">公司优势</a></div>
+                    <div class="list-box">
+                      <li><a href="/home/goodness/index/catId/50.html">岗前培训</a></li>
+                      <li><a href="/home/goodness/index/catId/50.html">运营分析</a></li>
+                      <li><a href="/home/goodness/index/catId/50.html">专人对接</a></li>
+                      <li><a href="/home/goodness/index/catId/50.html">车辆保证</a></li>
                     </div>
+                  </div>
+                  <div class="link-list">
+                    <div class="title"><a href="/home/join/index/catId/53.html">加入我们</a></div>
+                    <div class="list-box">
+                      <li><a href="/home/join/index/catId/53.html">报名入口</a></li>
+                      <li><a href="/home/join/index/catId/53.html">公司地址</a></li>
+                      <li><a href="/home/join/index/catId/53.html">联系方式</a></li>
+                    </div>
+                  </div>
                 </div>
                 <div class="right">
                     <div class="qr-code">

@@ -1,4 +1,4 @@
-<?php /*a:3:{s:58:"/www/wwwroot/jusha/application/admin/view/index/index.html";i:1545543491;s:58:"/www/wwwroot/jusha/application/admin/view/common/head.html";i:1545543491;s:58:"/www/wwwroot/jusha/application/admin/view/common/foot.html";i:1545543491;}*/ ?>
+<?php /*a:3:{s:58:"/www/wwwroot/jusha/application/admin/view/index/index.html";i:1545617724;s:58:"/www/wwwroot/jusha/application/admin/view/common/head.html";i:1545543491;s:58:"/www/wwwroot/jusha/application/admin/view/common/foot.html";i:1545543491;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,9 +91,7 @@
     </div>
     <div class="layui-footer footer footer-demo" id="admin-footer">
         <div class="layui-main">
-            <p>2017 &copy;
-                <a href="http://www.cltphp.com/">www.cltphp.com</a> Apache Licence 2.0
-            </p>
+          
         </div>
     </div>
     <div class="site-tree-mobile layui-hide">

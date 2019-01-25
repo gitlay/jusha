@@ -1,11 +1,13 @@
-<?php /*a:1:{s:55:"/www/wwwroot/jusha/application/home/view/cars_list.html";i:1545545129;}*/ ?>
+<?php /*a:1:{s:55:"/www/wwwroot/jusha/application/home/view/cars_list.html";i:1548128028;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-		<title></title>
+		<title><?php echo isset($info['title']) ? htmlentities($info['title']) : ($title ? $title : $sys['title']); ?></title>
+		<meta name="keywords" content="<?php echo isset($info['keywords']) ? htmlentities($info['keywords']) : ($keywords ? $keywords : $sys['key']); ?>"/>
+		<meta name="description" content="<?php echo isset($info['description']) ? htmlentities($info['description']) : ($description ? $description : $sys['des']); ?>"/>
 		<link rel="stylesheet" type="text/css" href="/template/lib/mui.min.css"/>
 		<link rel="stylesheet" type="text/css" href="/template/lib/swiper-3.4.2.min.css"/>
 		<link rel="stylesheet" type="text/css" href="/template/lib/certify.css"/>
@@ -111,43 +113,46 @@
 						<div class="link-box">
 							<ul class="logo-wrap">
 								<div class="logo-box">
-									<img src="<?php echo htmlentities($sys['logoa']); ?>">
+									<img src="<?php echo htmlentities($sys['logoa']); ?>" onclick="bottom_logo()"  style="cursor:pointer">
 								</div>
 							</ul>
+                            <script>
+                            function bottom_logo(){
+                                window.location.href="/";
+                            }
+               
+            				  </script>
 							<ul class="intro">
-								<li><a class="title">公司简介</a></li>
-								<li><a >车型展示</a></li>
-								<li><a >车辆细节</a></li>
-								<li><a >车辆参数</a></li>
-								<li><a >运营分析</a></li>
+								<li><a href="/about-2.html" class="title">公司简介</a></li>
+
 							</ul>
 							<ul class="intro">
 								<li class="line"></li>
 							</ul>
 							<ul class="intro">
-								<li><a class="title">行业动态</a></li>
-								<li><a >政策</a></li>
-								<li><a >证照相关</a></li>
-								<li><a >合规公司优势</a></li>
+								<li><a class="title" href="/home/trade/index/catId/46.html#a">行业动态</a></li>
+								<li><a  href="/home/trade/index/catId/46.html#a">政策</a></li>
+								<li><a  href="/home/trade/index/catId/46.html#b">证照相关</a></li>
+								<li><a  href="/home/trade/index/catId/46.html#c">合规公司优势</a></li>
 							</ul>
 							<ul class="intro">
 								<li class="line"></li>
 							</ul>
 							<ul class="intro">
-								<li><a class="title">公司优势</a></li>
-								<li><a >岗前培训</a></li>
-								<li><a >运营分析</a></li>
-								<li><a >专人对接</a></li>
-								<li><a >车辆保证</a></li>
+								<li><a class="title" href="/home/car/index/catId/55.html">公司优势</a></li>
+								<li><a href="/home/car/index/catId/55.html">岗前培训</a></li>
+								<li><a href="/home/car/index/catId/55.html">运营分析</a></li>
+								<li><a href="/home/car/index/catId/55.html">专人对接</a></li>
+								<li><a href="/home/car/index/catId/55.html">车辆保证</a></li>
 							</ul>
 							<ul class="intro">
 								<li class="line"></li>
 							</ul>
 							<ul class="intro">
-								<li><a class="title">加入我们</a></li>
-								<li><a >报名入口</a></li>
-								<li><a >公司地址</a></li>
-								<li><a >联系方式</a></li>
+								<li><a class="title" href="/home/join/index/catId/53.html">加入我们</a></li>
+								<li><a href="/home/join/index/catId/53.html">报名入口</a></li>
+								<li><a href="/home/join/index/catId/53.html">公司地址</a></li>
+								<li><a href="/home/join/index/catId/53.html">联系方式</a></li>
 							</ul>
 							<ul class="intro">
 								<li class="line"></li>
@@ -343,6 +348,8 @@
 	</body>
 </html>
 
+
+
 <script>
     var app = new Vue({
         el:'.body',
@@ -353,286 +360,6 @@
             paramShow:false,//参数
             yunyingShow:false,//运营分析
             cars:<?php echo json_encode($cars); ?>,
-           /* cars:[
-
-            <?php  $num = count($cars); if(is_array($cars) || $cars instanceof \think\Collection || $cars instanceof \think\Paginator): $i = 0; $__LIST__ = $cars;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>
-
-    {
-        title:'<?php echo htmlentities($v['title']); ?>',
-            tag:'<?php echo htmlentities($v['tag']); ?>',
-        price:'<?php echo htmlentities($v['price']); ?>',
-        type:'<?php echo htmlentities($v['type']); ?>',
-        maxKw:'<?php echo htmlentities($v['maxKw']); ?>',
-        maxNm:'<?php echo htmlentities($v['maxNm']); ?>',
-        engine:'<?php echo htmlentities($v['engine']); ?>',
-        bsx:'<?php echo htmlentities($v['bsx']); ?>',
-        size:'<?php echo htmlentities($v['size']); ?>',
-        zhyh:'<?php echo htmlentities($v['zhyh']); ?>',//综合油耗O
-        zb:'<?php echo htmlentities($v['zb']); ?>',//质保
-        zj:'<?php echo htmlentities($v['zj']); ?>',//轴距
-        riTitle:'<?php echo htmlentities($v['riTitle']); ?>',
-        rj:'<?php echo htmlentities($v['rj']); ?>',//容积
-        dc:'<?php echo htmlentities($v['dc']); ?>',//电池
-        lc:'<?php echo htmlentities($v['lc']); ?>',//里程
-        dlcb:'<?php echo htmlentities($v['dlcb']); ?>',//动力成本
-        bycb:'<?php echo htmlentities($v['bycb']); ?>',//保养成本
-        ys:'<?php echo htmlentities($v['ys']); ?>',//优势
-        ls:'<?php echo htmlentities($v['ls']); ?>',//劣势
-        wgS:<?php echo htmlentities($v['wgS']); ?>,
-        cbS:<?php echo htmlentities($v['cbS']); ?>,
-        dlS:<?php echo htmlentities($v['dlS']); ?>,
-        zbS:<?php echo htmlentities($v['zbS']); ?>,
-        bgimg:'url("<?php echo htmlentities($v['bgimg']); ?>")',
-            bg:'<?php echo htmlentities($v['bg']); ?>',
-        simg:'<?php echo htmlentities($v['simg']); ?>',
-        bimgs:[
-    <?php  $n = count($v['bimgs']); if(is_array($v['bimgs']) || $v['bimgs'] instanceof \think\Collection || $v['bimgs'] instanceof \think\Paginator): $k = 0; $__LIST__ = $v['bimgs'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$o): $mod = ($k % 2 );++$k;?>
-        { title:'<?php echo htmlentities($o['title']); ?>',img:'<?php echo htmlentities($o['img']); ?>' }
-        <?php if($k != $n): ?>,<?php endif; ?>
-        <?php endforeach; endif; else: echo "" ;endif; ?>
-
-        ]
-        }
-        <?php if($i != $num): ?>,<?php endif; ?>
-            <?php endforeach; endif; else: echo "" ;endif; ?>
-
-
-            ],*/
-           /* cars:[
-                {
-                    title:'吉利帝豪EV450',
-                    tag:'快车',
-                    price:'13.58',
-                    type:'纯电动',
-                    maxKw:'120',
-                    maxNm:'250',
-                    engine:'--',
-                    bsx:'单速',
-                    size:'4631*1789*1495',
-                    zhyh:'--',//综合油耗O
-                    zb:'营运超长质保',//质保
-                    zj:'2650',//轴距
-                    riTitle:'电池容量（kWh）',
-                    rj:'52',//容积
-                    dc:'三元锂电池',//电池
-                    lc:'400',//里程
-                    dlcb:'百公里用电13度',//动力成本
-                    bycb:'约0.01元/公里',//保养成本
-                    ys:'可快充，免购置税，不限行，有一定的市场知名度，外观具有现代感，内饰相比同级别电车具备科技感与档次',//优势
-                    ls:'充电需要快慢充交替进行',//劣势
-                    wgS:3,
-                    cbS:4,
-                    dlS:5,
-                    zbS:3,
-                    bgimg:'url("img/3-3.png")',
-                    bg:'carimg/jili.png',
-                    simg:'carimg/jili-s.png',
-                    bimgs:[
-                        { title:'中控',img:'jiliImgs/01.png' },
-                        { title:'天窗',img:'jiliImgs/02.png' },
-                        { title:'轮胎',img:'jiliImgs/03.png' },
-                        { title:'后备厢',img:'jiliImgs/04.png' },
-                        { title:'发动机',img:'jiliImgs/05.png' },
-                        { title:'车尾',img:'jiliImgs/06.png' },
-                        { title:'车体分解图',img:'jiliImgs/07.png' },
-                        { title:'车辆空间',img:'jiliImgs/08.png' },
-                        { title:'安全气囊',img:'jiliImgs/09.png' }
-                    ]
-                },
-                {
-                    title:'卡罗拉双擎',
-                    tag:'优享',
-                    price:'14.18',
-                    type:'油电混动',
-                    maxKw:'--',
-                    maxNm:'--',
-                    engine:'1.8L 99马力 L4',
-                    bsx:'无级变速',
-                    size:'4630*1775*1485',
-                    zhyh:'4.2',//综合油耗O
-                    zb:'营运超长质保',//质保
-                    zj:'2700',//轴距
-                    riTitle:'油箱容积（L）',
-                    rj:'45',//容积
-                    dc:'镍氢电池',//电池
-                    lc:'--',//里程
-                    dlcb:'综合油耗百公里4.2L',//动力成本
-                    bycb:'约0.1元/公里',//保养成本
-                    ys:'市场占有率高，车辆保值，质量可靠，安全稳定，客户认可',//优势
-                    ls:'保养成本高于新能源汽车，受限行管控',//劣势
-                    wgS:4,
-                    cbS:4,
-                    dlS:3.5,
-                    zbS:3.5,
-                    bgimg:'url("img/3-1.png")',
-                    bg:'carimg/kll.png',
-                    simg:'carimg/kll-s.png',
-                    bimgs:[
-                        { title:'中控',img:'kll/01.png' },
-                        { title:'天窗',img:'kll/02.png' },
-                        { title:'轮胎',img:'kll/03.png' },
-                        { title:'后备厢',img:'kll/04.png' },
-                        { title:'发动机',img:'kll/05.png' },
-                        { title:'大灯',img:'kll/06.png' },
-                        { title:'车尾',img:'kll/07.png' },
-                        { title:'安全气囊',img:'kll/08.png' }
-                    ]
-                },
-                {
-                    title:'比亚迪秦80',
-                    tag:'快车',
-                    price:'13.99',
-                    type:'插电式混合',
-                    maxKw:'217',
-                    maxNm:'479',
-                    engine:'1.5T 154马力 L4',
-                    bsx:'6挡双离合',
-                    size:'4740*1770*1480',
-                    zhyh:'--',//综合油耗O
-                    zb:'营运超长质保',//质保
-                    zj:'2670',//轴距
-                    riTitle:'油箱容积（L）',
-                    rj:'39',//容积
-                    dc:'三元锂电池',//电池
-                    lc:'80',//里程
-                    dlcb:'市区工况百公里4.7L',//动力成本
-                    bycb:'约0.08元/公里',//保养成本
-                    ys:'外观时尚，内饰新颖，原车自带倒车影像、雷达',//优势
-                    ls:'不能快充，动力及保养成本介于纯电动车和传统燃油车之间',//劣势
-                    wgS:4.5,
-                    cbS:4,
-                    dlS:4,
-                    zbS:4.5,
-                    bgimg:'url("img/3-2.png")',
-                    bg:'carimg/qin.png',
-                    simg:'carimg/qin-s.png',
-                    bimgs:[
-                        { title:'中控',img:'qin/01.png' },
-                        { title:'尾灯',img:'qin/02.png' },
-                        { title:'轮胎',img:'qin/03.png' },
-                        { title:'加油口',img:'qin/04.png' },
-                        { title:'发动机',img:'qin/05.png' },
-                        { title:'充电口',img:'qin/06.png' },
-                        { title:'车尾',img:'qin/07.png' }
-                    ]
-                },
-                {
-                    title:'荣威ei6',
-                    tag:'优享',
-                    price:'15.28',
-                    type:'插电式混合',
-                    maxKw:'168',
-                    maxNm:'622',
-                    engine:'1.0T 125马力 L3',
-                    bsx:'2挡自动',
-                    size:'4671*1835*1460',
-                    zhyh:'4.9',//综合油耗O
-                    zb:'营运超长质保',//质保
-                    zj:'2715',//轴距
-                    riTitle:'油箱容积（L）',
-                    rj:'30',//容积
-                    dc:'三元锂电池',//电池
-                    lc:'53',//里程
-                    dlcb:'百公里1.5L',//动力成本
-                    bycb:'约0.07元/公里',//保养成本
-                    ys:'外观时尚，免购置税，不受限行管控，比较受网约车司机青睐',//优势
-                    ls:'动力及保养成本介于纯电动车和传统燃油车之间',//劣势
-                    wgS:4,
-                    cbS:4.5,
-                    dlS:3.5,
-                    zbS:3.5,
-                    bgimg:'url("img/3-2.png")',
-                    bg:'carimg/rw.png',
-                    simg:'carimg/rw-s.png',
-                    bimgs:[
-                        { title:'中控',img:'rw/01.png' },
-                        { title:'旋钮式换挡杆',img:'rw/02.png' },
-                        { title:'前舱',img:'rw/03.png' },
-                        { title:'轮胎',img:'rw/04.png' },
-                        { title:'后排空间',img:'rw/05.png' },
-                        { title:'后备厢',img:'rw/06.png' },
-                        { title:'发动机',img:'rw/07.png' },
-                        { title:'充电口',img:'rw/08.png' },
-                        { title:'车尾',img:'rw/09.png' }
-                    ]
-                },
-                {
-                    title:'起亚K5',
-                    tag:'优享',
-                    price:'12.18',
-                    type:'油气混动',
-                    maxKw:'118',
-                    maxNm:'193',
-                    engine:'2.0L 161马力 L4',
-                    bsx:'6挡手动',
-                    size:'4855*1860*1475',
-                    zhyh:'--',//综合油耗O
-                    zb:'营运超长质保',//质保
-                    zj:'2805',//轴距
-                    riTitle:'油箱容积（L）',
-                    rj:'60',//容积
-                    dc:'--',//电池
-                    lc:'--',//里程
-                    dlcb:'用气百公里9.1立方米',//动力成本
-                    bycb:'约0.07元/公里',//保养成本
-                    ys:'车价低，空间大，客户认可度较高',//优势
-                    ls:'手动挡，油气车后备厢空间小，受限行管控',//劣势
-                    wgS:4.5,
-                    cbS:4,
-                    dlS:3.5,
-                    zbS:3,
-                    bgimg:'url("img/3-4.png")',
-                    bg:'carimg/k5.png',
-                    simg:'carimg/k5-s.png',
-                    bimgs:[
-                        { title:'中控',img:'k5/01.png' },
-                        { title:'轮胎',img:'k5/02.png' },
-                        { title:'后备厢',img:'k5/03.png' },
-                        { title:'发动机',img:'k5/04.png' },
-                        { title:'车尾',img:'k5/05.png' },
-                    ]
-                },
-                {
-                    title:'长城欧拉IQ',
-                    tag:'快车',
-                    price:'9.98',
-                    type:'纯电动',
-                    maxKw:'120',
-                    maxNm:'280',
-                    engine:'--',
-                    bsx:'单速',
-                    size:'4445*1735*1567',
-                    zhyh:'--',//综合油耗O
-                    zb:'营运超长质保',//质保
-                    zj:'2615',//轴距
-                    riTitle:'电池容量（kWh）',
-                    rj:'47',//容积
-                    dc:'三元锂电池',//电池
-                    lc:'401',//里程
-                    dlcb:'百公里用电13度',//动力成本
-                    bycb:'约0.01元/公里',//保养成本
-                    ys:'可快充，免购置税，不限行，车价较低，空间大，绿牌不限号，性价比高',//优势
-                    ls:'充电需要快慢充交替进行',//劣势
-                    wgS:2.5,
-                    cbS:3.2,
-                    dlS:5,
-                    zbS:4,
-                    bgimg:'url("img/3-3.png")',
-                    bg:'carimg/ola.png',
-                    simg:'carimg/ola-s.png',
-                    bimgs:[
-                        { title:'中控',img:'ola/01.png' },
-                        { title:'尾灯',img:'ola/02.png' },
-                        { title:'轮胎',img:'ola/03.png' },
-                        { title:'后备厢',img:'ola/04.png' },
-                        { title:'发动机',img:'ola/05.png' },
-                        { title:'充电口',img:'ola/06.png' },
-                        { title:'车尾',img:'ola/07.png' },
-                        { title:'车体骨架',img:'ola/08.png' }
-                    ]
-                },
-
-            ],*/
             currentIndex:0,
             initNewSwiperFlag:false,
             progress:false,
@@ -660,13 +387,13 @@
             carbg:function(item){
                 console.log(item.type)
                 if(item.type=="油电混动"){
-                    return 'img/3-1.png'
+                    return '/template/img/3-1.png'
                 }else if(item.type=="油气混动"){
-                    return 'img/3-2.png'
+                    return '/template/img/3-2.png'
                 }else if(item.type=="插电混动"){
-                    return 'img/3-4.png'
+                    return '/template/img/3-4.png'
                 }else if(item.type=="纯电动"){
-                    return 'img/3-3.png'
+                    return '/template/img/3-3.png'
                 }
             },
             fixShow:function(i){
@@ -686,12 +413,11 @@
                     this.introShow = false
                     this.paramShow = false
                     this.yunyingShow = true
-                }
-              else if(i==3){
+                }else if(i==3){
                     this.introShow = false
                     this.paramShow = false
                     this.yunyingShow = false
-                window.location.href="/home/join/index/catId/53.html";
+                    window.location.href="/home/join/index/catId/53.html";
                 }
 
             },
@@ -773,7 +499,6 @@
             watchSlidesVisibility : true,
             onProgress: function(swiper, progress) {
 //					if($("body").width()>500)return
-
                 if(that.initNewSwiperFlag){
                     that.initNewSwiperFlag = false
                     that.progress = true
@@ -784,35 +509,28 @@
                     setTimeout(function(){
 //							that.zeroInit = false
                         that.progress = false
-                    },500)
+                    },50)
                 }
-//					console.log(that.progress)
                 if(that.zeroInit){
-//						console.log(swiper.activeIndex)
-                    that.currentIndex = swiper.activeIndex % 6
-//						that.bSwipers = that.cars[that.currentIndex].bimgs
+                    var length = that.cars.length
+                    that.currentIndex = swiper.activeIndex % length
                     that.bSwipers = that.cars[that.currentIndex].bimgs
                     swiper.updateSlidesSize()
 //						that.$set(that,'bSwipers',[])
 //						that.$set(that,'bSwipers',that.cars[that.currentIndex].bimgs)
-                    console.log(that.bSwipers)
                     that.progress = true
                 }
             },
             onSlideChangeStart: function(swiper){
-//					that.currentIndex = swiper.activeIndex % 6
-//			      if(that.zeroInit&&!that.progress){
-//			      	console.log(swiper.activeIndex);
-//					   that.currentIndex = swiper.activeIndex % 6
-//					   that.progress = true
-//					}
+
             },
             onSlideChangeEnd: function(swiper){
                 console.log(swiper.activeIndex);
                 console.log('onSlideChangeEnd')
                 that.progress = false
-                if(!that.zeroInit&&swiper.activeIndex % 6>0)return
-                that.currentIndex = swiper.activeIndex % 6
+                var length = that.cars.length
+                if(!that.zeroInit&&swiper.activeIndex % length>0)return
+                that.currentIndex = swiper.activeIndex % length
                 that.bSwipers = that.cars[that.currentIndex].bimgs
                 swiper.updateSlidesSize()
             },

@@ -578,7 +578,7 @@
 		font-size: 18px;
 	}
 	.param-box{
-		padding: 7px 10px 30px 30px;
+		padding: 7px 10px 30px 118px;
 		font-size: 16px;
 		overflow: hidden;
 	}
@@ -600,7 +600,7 @@
 	padding: 3px 10px;
 }
 .param-left{
-	padding-right: 20px;
+	/*padding-right: 20px;*/
 }
 .param-item{
 	overflow: hidden;
@@ -650,6 +650,35 @@
 }
 /**/
 @media only screen and (min-width: 500px) {
+	.param-left{
+		/*border-right: 1.5px solid rgba(255,255,255,0.4);
+		margin-right: 80px;
+		padding-right: 25px;*/
+		margin-right: 80px;
+		width: 45%;
+		position: relative;
+	}
+	.param-left .whiteline{
+		position: absolute;
+		top: 10px;
+		bottom: 20px;
+		right: -10px;
+		width: 1.5px;
+		z-index: 10;
+		background: rgba(255,255,255,0.4);
+	}
+	.param-left::after{
+		/*position: absolute;
+		top: 20px;
+		bottom: 20px;
+		right: 40px;
+		width: 1.5px;
+		z-index: 10;
+		background: rgba(255,255,255,0.4);*/
+	}
+	.param-right{
+		width: 45%;
+	}
 		.yunying{
 	    		position: fixed;
 			top: 100px;
@@ -728,9 +757,9 @@
 	}
 }
 .middle-line{
-	height: 2px;
+	height: 1px;
 	/*width: 30px;*/
-	background: #777;
+	background: rgba(255,255,255,0.4);
 	margin: 0 auto;
 	margin-top: 10px;
 	margin-bottom: 10px;

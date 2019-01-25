@@ -33,7 +33,7 @@
         <div class="brief">
             {$info.content|raw}
         </div>
-        <div class="slider">
+<!--         <div class="slider">
             <div class="back-img">
                 <img src="{$category.image}" class="pc-web">
                 <img src="{$category.imageMobile}" class="mb-web">
@@ -56,7 +56,37 @@
                     >
                 </div>
             </div>
-        </div>
+        </div> -->
+            <div class="slider">
+                <div class="back-img">
+                    <img src="{$category.image}" class="pc-web">
+                    <img src="{$category.imageMobile}" class="mb-web">
+                </div>
+                <div class="slide-box">
+                    <div class="slide-wrapper" id="slide-wrapper">
+                        <?php
+                    $array=['','left','midd','right'];
+                    ?>
+                    {volist name="category['list']" id="v"}
+                        <div class="slide-item prevImg" id="{$array[$i]}">
+                            <img src="{$v.pic}">
+                        </div>
+                    {/volist}
+                      <!--   <div class="slide-item" id="midd">
+                            <img src="img/web/about3.jpg">
+                        </div>
+                        <div class="slide-item nextImg" id="right">
+                            <img src="img/web/about4.jpg">
+                        </div> -->
+                    </div>
+                    <div class="prev">
+                        <
+                    </div>
+                    <div class="next" status="1">
+                        >
+                    </div>
+                </div>  
+            </div>
     </div>
 </div>
 {include file="common/footer"/}
