@@ -30,7 +30,7 @@
 				$page = new app\services\PageService();
 				?>
 				{volist name="child" id="v"}
-				<?php $info = $page->getPage($v['id']);?>
+				<?php $info = $page->getOne($v['id']);?>
 				<div class="window-item" {eq name="i" value="1"}id="item-selected"{/eq}>
 						{$info.content|raw}
 				</div>

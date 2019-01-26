@@ -58,7 +58,7 @@
             <?php
             $page = new app\services\PageService();
 
-            $category = $page->getCategory(54,db('address'));
+            $category = $page->getCategory(54,'address');
             ?>
             <div class="address">
                 {volist name="category['list']" id="v"}

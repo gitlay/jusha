@@ -16,14 +16,14 @@
 {include file="common/header"/}
 <?php
      $page = new app\services\PageService();
-     $info = $page->getOne(57);
-
-     $picture = $page->getCategory(45,db('picture'));
+     $info = $page->getPage(58);
+      $category =  $page->getCategory(2);
+      $picture = $page->getCategory(45,'picture');
 ?>
 <div class="content">
     <div class="banner">
-        <img src="{$info.image}" class="pc-banner">
-        <img src="{$info.imageMobile}" class="mb-banner">
+        <img src="{$category.image}" class="pc-banner">
+        <img src="{$category.imageMobile}" class="mb-banner">
     </div>
     <div class="floor">
         <div class="floor-title">

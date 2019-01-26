@@ -19,30 +19,23 @@ class PageService{
         $map = 'catid = '.$cat_id;
         $map .= ' and (status = 1 or (status = 0 and createtime <'.time().'))';
         $category =  Db::name('category')->where('id',$cat_id)->find();
-        if($model=='picture'){
-            $map .= ' and address_id = ' . session('address_id');
-        }
         if($model){
-            $category['list'] = db($model)->where($map)->order('sort asc,createtime desc')->select();
-
+            $category['list'] = $model->where($map)->order('sort asc,createtime desc')->select();
         }
-
         return  $category;
     }
 
     public function getOne($cat_id){
-
-        $module = db('category')->where(['id' => $cat_id])->value('module');
+        $arrchildid = db('category')->where(['id' => $cat_id])->value('arrchildid');
         $map = ' ';
-        if ($module == 'article') {
-            $map .= "article.catid= $cat_id";
+        if ($arrchildid != input('catId')) {
+            $map .= "article.catid in ($arrchildid)";
         } else {
-
           return $this->getPage($cat_id);
         }
         $map .= ' and article.address_id = ' . session('address_id');
         $map .=' and article.status = 1 or (article.status = 0 and article.createtime <'.time().')';
-       return  Db::name('article')->alias('article')->leftJoin('clt_category cat','cat.id=article.catid')
+       return  Db::name('article')->leftJoin('clt_category cat','cat.id=article.catid')
            ->where($map)->field('article.*,cat.catname,cat.image,cat.imageMobile,cat.catdir')  ->find();
     }
 }
